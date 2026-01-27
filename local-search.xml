@@ -4,29 +4,18 @@
   
   
   <entry>
-    <title></title>
-    <link href="/2026/01/27/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/"/>
-    <url>/2026/01/27/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>BurpSuit使用</title>
-    <link href="/2026/01/27/BurpSuit_usage/"/>
-    <url>/2026/01/27/BurpSuit_usage/</url>
+    <link href="/2026/12/01/BurpSuit_usage/"/>
+    <url>/2026/12/01/BurpSuit_usage/</url>
     
     <content type="html"><![CDATA[<h2 id="前置基础知识"><a href="#前置基础知识" class="headerlink" title="前置基础知识"></a>前置基础知识</h2><h3 id="主页面模块"><a href="#主页面模块" class="headerlink" title="主页面模块"></a>主页面模块</h3><p>1.Dashboard(扫描与审计)<br>2.Target(目标)——显示目标目录结构的的一个功能<br>3.Proxy(代理)——拦截HTTP&#x2F;S的代理服务器，作为在浏览器和目标应用程序之间的中间人，允许拦截、查看和修改在两个方向上的原始数据流。<br>4.Spider(爬虫)——自动爬取网站目录和内容。<br>5.Scanner(扫描器)——自动扫描web漏洞。<br>6.Intruder(入侵)——高度可配置的工具，可用作自动化攻击，如爆破密码、枚举目录、SQL 注入等。<br>7.Repeater(重放器)——手动操作修改重发某个单个请求。<br>8.Comparer（对比器）——对比两个请i去&#x2F;响应的差异<br>9.Sequencer(会话)——用来分析那些不可预知的应用程序会话令牌和重要数据项的随机性的工具。<br>10.Decoder(解码器)——进行手动执行或对应用程序数据者智能解码编码的工具。<br>11.Comparer(对比)——通常是通过一些相关的请求和响应得到两项数据的一个可视化的“差异”。<br>12.Logger(日志记录器)——记录和审计所有经过 Burp Proxy 的 HTTP&#x2F;HTTPS 流量<br>13.Extender(扩展)——安装插件扩展功能。</p><h3 id="功能及具体使用"><a href="#功能及具体使用" class="headerlink" title="功能及具体使用"></a>功能及具体使用</h3><p>1.Proxy<br><img src="image1.png" width="600"><br>proxy-intercept可以审计当前的请求，或者存储和发送到其他的页面进行其他的操作等<br><img src="image2.png" width="600"><br>在其他地方导入其他的请求数据包<br>拦截当前数据包的 返回包，可以进行伪造验证等操作<br>对当前输入时候的对象进行urlcode编码，一些特殊的符号会自动转换成url编码<br><img src="image3.png" width="600"></p><p>proxy—-http hitsory模块 记录请求日志功能<br>proxy—-options模块 监听配置</p><p>2.Intruder<br>将请求包发送到intruder<br><img src="image4.png" width="600"></p><ul><li>Positions：设置请求中的参数及攻击类型</li><li>Payloads：为上面的参数设置数据集、参数编码、加密等功能</li><li>Resource Pool：指定请求线程及延时时间<img src="image5.png" width="600"></li><li>Sniper 使用一组数据集合，依次对 $ 标记的变量进行爆破，即：针对一个参数变量，使用一个数据集合<br>[使用场景：单一目标，已知用户名，密码未知]</li><li>Battering ram 使用一组数据集合，同时对 $ 标记的所有变量进行爆破，即：针对多个参数变量，使用一个数据集合<br>[使用场景：两个单一目标，相互不影响]</li><li>Pitchfork 使用多组数据集合，同时爆破被 $ 标记的变量，即：针对多个参数变量，使用多个数据集合<br>[使用场景：用户名和密码都未知，每个用户名只使用一个密码进行攻击]</li><li>Cluster bomb 使用多组数据集合进行组合（笛卡尔积）后，依次对多个爆破点变量进行爆破，即：针对多个变量，使用多个数据集合的组合<br>[使用场景：两个目标，每个用户名使用所有密码都进行一次攻击]<img src="image6.png" width="600">在 Positions 标签下，我们需要先点击右侧的「 Clear § 」按钮来清除默认的参数标签然后鼠标选择需要设置为变量的值，点击右侧的「 Add § 」按钮来设置它为变量<img src="image7.png" width="600">导入字典，”start attact“进行暴破<img src="image8.png" width="600">正确的密码长度和其他稍有不同</li></ul>]]></content>
     
     
     <categories>
       
-      <category>CTF / 工具使用</category>
+      <category>CTF</category>
+      
+      <category>工具使用</category>
       
     </categories>
     
@@ -42,11 +31,24 @@
   
   
   <entry>
-    <title>图片隐写</title>
-    <link href="/2025/12/01/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/"/>
-    <url>/2025/12/01/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/</url>
+    <title></title>
+    <link href="/2026/01/27/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/"/>
+    <url>/2026/01/27/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/</url>
     
-    <content type="html"><![CDATA[<h1 id="隐写基础·几种常见图片隐写"><a href="#隐写基础·几种常见图片隐写" class="headerlink" title="隐写基础·几种常见图片隐写"></a>隐写基础·几种常见图片隐写</h1><h2 id="文件头隐写"><a href="#文件头隐写" class="headerlink" title="文件头隐写"></a>文件头隐写</h2><p>根据16进制查看文件类型，一般是修改了文件格式或要补全文件头</p><h2 id="IDAT块隐写"><a href="#IDAT块隐写" class="headerlink" title="IDAT块隐写"></a>IDAT块隐写</h2><p>pngdebugger可以检查crc、tweakpng可以对idat块进行操作<br>工具：pngdebugger、tweakpng<br>关于什么时候该删除什么idat块？<br>1.使用tweakpng将图片的idat块合并<br>2.在kali中使用binwalk检查idat块内的偏移值（合并前、合并后的差值）<br>3.再回到tweak根据偏移值分离IDAT块，删除多余部分，再保存即可</p><h2 id="宽高修改"><a href="#宽高修改" class="headerlink" title="宽高修改"></a>宽高修改</h2><p>高度被修改的遮住了部分信息，图片其余部分还可以正常显示<br>宽度被修改则无法正常显示<br>一般被修改过宽高的图片在kali中不能正常打开，但在windows中可以打开<br>png：width为宽，height为高<br><img src="img1.png" width="600"><br>jpg：Y,X<br><img src="img2.png" width="600"><br>bmp：LONG biWidth,biHeight<br><img src="img3.png" width="600"></p><h2 id="LSB-最低有效位"><a href="#LSB-最低有效位" class="headerlink" title="LSB 最低有效位"></a>LSB 最低有效位</h2><p>工具：stegsolve<br>仅可对png、bmp无损图片格式使用<br>LSB 隐写就是修改 RGB 颜色分量的最低二进制位（LSB），每个颜色会有 8 bit，LSB 隐写就是修改了像数中的最低的 1 bit，每个像素可以携带 3 比特的信息</p>]]></content>
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>编码</title>
+    <link href="/2025/12/01/code/"/>
+    <url>/2025/12/01/code/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Morse编码"><a href="#Morse编码" class="headerlink" title="Morse编码"></a>Morse编码</h2><p>一种早期的数字化通信形式<br><img src="image1.png" width="600"></p><h2 id="敲击码"><a href="#敲击码" class="headerlink" title="敲击码"></a>敲击码</h2><p>敲击码是基于 5 ×5 方格波利比奥斯方阵来实现的，通过使用一系列的点击声音来编码而命名，c与k整合在一起<br>（相似对比）棋盘密码：将26个字母放在5×5的方格里，i,j放在一个格子里<br><img src="image2.png" width="600"></p><h2 id="曼彻斯特编码"><a href="#曼彻斯特编码" class="headerlink" title="曼彻斯特编码"></a>曼彻斯特编码</h2><p>通过电平的高低转换来表示“0”或“1”，每一位的中间有一个跳变的动作<br><img src="image3.png" width="600"></p><h2 id="格雷码GrayCode"><a href="#格雷码GrayCode" class="headerlink" title="格雷码GrayCode"></a>格雷码GrayCode</h2><p>格雷码是一个数列集合，每个数使用二进制位来表示<br>用n位元来表示每个数</p><ul><li>位元即每组数列基础数的个数，n位元就是n个二进制数<br>任意两个相邻的代码只有一位二进制数不同，最大数与最小数之间也仅一位数不同，即“首尾相连”</li><li>eg：3位元格雷码 000 001 011 010 110 111</li><li>eg：4位元格雷码 0000 0001 0011 0010 0110 0111 0101 0100</li></ul><h2 id="ascii编码"><a href="#ascii编码" class="headerlink" title="ascii编码"></a>ascii编码</h2><img src="image4.png" width="600"><h2 id="base家族"><a href="#base家族" class="headerlink" title="base家族"></a>base家族</h2><p>二进制编码规则<br>原始数据三字节为一组，每组24个二进制位<br>24个二进制位每6位一组，分为四组<br>每组前补00，构成每组8位<br>将四组8位的二进制转换成四组十进制<br>再根据base规则编码转换对应字符<br>其实base16就是hex</p><ul><li>Base16：0-9、A-F构成，不会出现”&#x3D;”</li><li>Base32：由A-Z、2-7构成，“&#x3D;”作后缀填充</li><li>Base58：不使用数字”0”，大写”O”，”I”(小写是i)，和”l”(大写是L)，以及”+“和”&#x2F;“。<br>（是用于比特币中使用的一种独特的编码方式，主要用于产生比特币的钱包地址）   </li><li>Base62：由A-Z、a-z、0-9构成。<br>(相比于base64,只是去掉了两个符号（+和&#x2F;）)    </li><li>Base64：由A-Z、a-z、0-9、+、&#x2F; 构成，“&#x3D;”作后缀填充<br>非二进制→二进制→每6bit计算十进制→base64对照表，</li><li>Base91：由91个字符（0-9，a-z，A-Z,!#$%&amp;()*+,.&#x2F;:;&lt;&#x3D;&gt;?@[]^_&#96;{|}~”）组成</li></ul><h2 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h2><p>移位密码，通过key在字母表中的顺序移位实现</p><h2 id="Rot13"><a href="#Rot13" class="headerlink" title="Rot13"></a>Rot13</h2><p>凯撒密码的13位，即密钥key为13</p><h2 id="url密码-（-编码）"><a href="#url密码-（-编码）" class="headerlink" title="url密码 （%编码）"></a>url密码 （%编码）</h2><p>原理：先转换成ascii，再将ascii转换为16进制，最后在每一位前加上‘%’<br>tips：在网址导航栏中有url</p><h2 id="培根bacon密码"><a href="#培根bacon密码" class="headerlink" title="培根bacon密码"></a>培根bacon密码</h2><p>利用’A’,’B’加密</p><h2 id="栅栏fence密码"><a href="#栅栏fence密码" class="headerlink" title="栅栏fence密码"></a>栅栏fence密码</h2><p>把明文分成N个组，然后取出每组的第一个，每组的第二个……接着按顺序排列得出密文</p><h2 id="jother编码（JSFuck）"><a href="#jother编码（JSFuck）" class="headerlink" title="jother编码（JSFuck）"></a>jother编码（JSFuck）</h2><p>在javascript语言中，利用少量特定字符构造精简的匿名函数对与字符串的编码方式.代码中大量出现“+”、“！”、“（”、“）”、“[”、“]”、“{”、“}”字符<br>例如:!![]+!![]+!![]+!![]+!![]+!![]</p><h2 id="unicode编码"><a href="#unicode编码" class="headerlink" title="unicode编码"></a>unicode编码</h2><p>每位前为’\u’，</p><h2 id="埃特巴什码-Atbash-Cipher"><a href="#埃特巴什码-Atbash-Cipher" class="headerlink" title="埃特巴什码(Atbash Cipher)"></a>埃特巴什码(Atbash Cipher)</h2><p>（Dr.熊斐特）<br>最后一个字母代表第一个字母，倒数第二个字母代表第二个字母</p><h2 id="Html编码"><a href="#Html编码" class="headerlink" title="Html编码"></a>Html编码</h2><p><a href="http://www.w3school.com.cn/charsets/ref_html_entities_v.asp">http://www.w3school.com.cn/charsets/ref_html_entities_v.asp</a><br>UTF-8<br>每位以‘&amp;#’开始，以‘；’结束</p><h2 id="UUencode"><a href="#UUencode" class="headerlink" title="UUencode"></a>UUencode</h2><p>二进制到文字的编码，最早在unix 邮件系统中使用，全称：Unix-to-Unix </p><h2 id="encoding"><a href="#encoding" class="headerlink" title="encoding"></a>encoding</h2><p>每三个字节为单位进行编码，如果最后剩下的资料少于三个字节，不够的部份用零补齐。三个字节共有24个Bit，以6-bit为单位分为4个组，每个组以十进制来表示所出现的字节的数值。这个数值只会落在0到63之间。然后将每个数加上32<br>产生的结果刚好落在ASCII字符集（32-空白…95-底线）的范围之中</p><h2 id="XXencode"><a href="#XXencode" class="headerlink" title="XXencode"></a>XXencode</h2><p>将输入文本以每三个字节为单位进行编码。如剩下的少于三个字节，不够的用零补齐。这三个字节共有24个Bit，以6bit为单位分为4个组，每个组以十进制来表示所出现的数值只会落在0到63之间。以所对应值的位置字符代替。+-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz，共64个字符。<br>跟base64字符相比，UUencode多一个“-” 字符，少一个”&#x2F;” 字符</p><h2 id="一些奇奇怪怪的密码"><a href="#一些奇奇怪怪的密码" class="headerlink" title="一些奇奇怪怪的密码"></a>一些奇奇怪怪的密码</h2><p>1.Ook密码<br>2.社会主义核心价值观密码<br>3.当铺密码：<br>当前汉字有多少笔画出头，就是转化成数字几<br>4.盲文<br>5.猪圈密码<br><img src="image5.png" width="600"><br>圣骑士团密码（猪圈变种）<br><img src="image6.png" width="600"><br>6.文本加密<br><a href="https://www.qqxiuzi.cn/bianma/wenbenjiami.php">https://www.qqxiuzi.cn/bianma/wenbenjiami.php</a></p>]]></content>
     
     
     <categories>
@@ -69,11 +71,11 @@
   
   
   <entry>
-    <title>编码</title>
-    <link href="/2025/12/01/code/"/>
-    <url>/2025/12/01/code/</url>
+    <title>图片隐写</title>
+    <link href="/2025/12/01/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/"/>
+    <url>/2025/12/01/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/</url>
     
-    <content type="html"><![CDATA[<h2 id="Morse编码"><a href="#Morse编码" class="headerlink" title="Morse编码"></a>Morse编码</h2><p>一种早期的数字化通信形式<br><img src="image1.png" width="600"></p><h2 id="敲击码"><a href="#敲击码" class="headerlink" title="敲击码"></a>敲击码</h2><p>敲击码是基于 5 ×5 方格波利比奥斯方阵来实现的，通过使用一系列的点击声音来编码而命名，c与k整合在一起<br>（相似对比）棋盘密码：将26个字母放在5×5的方格里，i,j放在一个格子里<br><img src="image2.png" width="600"></p><h2 id="曼彻斯特编码"><a href="#曼彻斯特编码" class="headerlink" title="曼彻斯特编码"></a>曼彻斯特编码</h2><p>通过电平的高低转换来表示“0”或“1”，每一位的中间有一个跳变的动作<br><img src="image3.png" width="600"></p><h2 id="格雷码GrayCode"><a href="#格雷码GrayCode" class="headerlink" title="格雷码GrayCode"></a>格雷码GrayCode</h2><p>格雷码是一个数列集合，每个数使用二进制位来表示<br>用n位元来表示每个数</p><ul><li>位元即每组数列基础数的个数，n位元就是n个二进制数<br>任意两个相邻的代码只有一位二进制数不同，最大数与最小数之间也仅一位数不同，即“首尾相连”</li><li>eg：3位元格雷码 000 001 011 010 110 111</li><li>eg：4位元格雷码 0000 0001 0011 0010 0110 0111 0101 0100</li></ul><h2 id="ascii编码"><a href="#ascii编码" class="headerlink" title="ascii编码"></a>ascii编码</h2><img src="image4.png" width="600"><h2 id="base家族"><a href="#base家族" class="headerlink" title="base家族"></a>base家族</h2><p>二进制编码规则<br>原始数据三字节为一组，每组24个二进制位<br>24个二进制位每6位一组，分为四组<br>每组前补00，构成每组8位<br>将四组8位的二进制转换成四组十进制<br>再根据base规则编码转换对应字符<br>其实base16就是hex</p><ul><li>Base16：0-9、A-F构成，不会出现”&#x3D;”</li><li>Base32：由A-Z、2-7构成，“&#x3D;”作后缀填充</li><li>Base58：不使用数字”0”，大写”O”，”I”(小写是i)，和”l”(大写是L)，以及”+“和”&#x2F;“。<br>（是用于比特币中使用的一种独特的编码方式，主要用于产生比特币的钱包地址）   </li><li>Base62：由A-Z、a-z、0-9构成。<br>(相比于base64,只是去掉了两个符号（+和&#x2F;）)    </li><li>Base64：由A-Z、a-z、0-9、+、&#x2F; 构成，“&#x3D;”作后缀填充<br>非二进制→二进制→每6bit计算十进制→base64对照表，</li><li>Base91：由91个字符（0-9，a-z，A-Z,!#$%&amp;()*+,.&#x2F;:;&lt;&#x3D;&gt;?@[]^_&#96;{|}~”）组成</li></ul><h2 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h2><p>移位密码，通过key在字母表中的顺序移位实现</p><h2 id="Rot13"><a href="#Rot13" class="headerlink" title="Rot13"></a>Rot13</h2><p>凯撒密码的13位，即密钥key为13</p><h2 id="url密码-（-编码）"><a href="#url密码-（-编码）" class="headerlink" title="url密码 （%编码）"></a>url密码 （%编码）</h2><p>原理：先转换成ascii，再将ascii转换为16进制，最后在每一位前加上‘%’<br>tips：在网址导航栏中有url</p><h2 id="培根bacon密码"><a href="#培根bacon密码" class="headerlink" title="培根bacon密码"></a>培根bacon密码</h2><p>利用’A’,’B’加密</p><h2 id="栅栏fence密码"><a href="#栅栏fence密码" class="headerlink" title="栅栏fence密码"></a>栅栏fence密码</h2><p>把明文分成N个组，然后取出每组的第一个，每组的第二个……接着按顺序排列得出密文</p><h2 id="jother编码（JSFuck）"><a href="#jother编码（JSFuck）" class="headerlink" title="jother编码（JSFuck）"></a>jother编码（JSFuck）</h2><p>在javascript语言中，利用少量特定字符构造精简的匿名函数对与字符串的编码方式.代码中大量出现“+”、“！”、“（”、“）”、“[”、“]”、“{”、“}”字符<br>例如:!![]+!![]+!![]+!![]+!![]+!![]</p><h2 id="unicode编码"><a href="#unicode编码" class="headerlink" title="unicode编码"></a>unicode编码</h2><p>每位前为’\u’，</p><h2 id="埃特巴什码-Atbash-Cipher"><a href="#埃特巴什码-Atbash-Cipher" class="headerlink" title="埃特巴什码(Atbash Cipher)"></a>埃特巴什码(Atbash Cipher)</h2><p>（Dr.熊斐特）<br>最后一个字母代表第一个字母，倒数第二个字母代表第二个字母</p><h2 id="Html编码"><a href="#Html编码" class="headerlink" title="Html编码"></a>Html编码</h2><p><a href="http://www.w3school.com.cn/charsets/ref_html_entities_v.asp">http://www.w3school.com.cn/charsets/ref_html_entities_v.asp</a><br>UTF-8<br>每位以‘&amp;#’开始，以‘；’结束</p><h2 id="UUencode"><a href="#UUencode" class="headerlink" title="UUencode"></a>UUencode</h2><p>二进制到文字的编码，最早在unix 邮件系统中使用，全称：Unix-to-Unix </p><h2 id="encoding"><a href="#encoding" class="headerlink" title="encoding"></a>encoding</h2><p>每三个字节为单位进行编码，如果最后剩下的资料少于三个字节，不够的部份用零补齐。三个字节共有24个Bit，以6-bit为单位分为4个组，每个组以十进制来表示所出现的字节的数值。这个数值只会落在0到63之间。然后将每个数加上32<br>产生的结果刚好落在ASCII字符集（32-空白…95-底线）的范围之中</p><h2 id="XXencode"><a href="#XXencode" class="headerlink" title="XXencode"></a>XXencode</h2><p>将输入文本以每三个字节为单位进行编码。如剩下的少于三个字节，不够的用零补齐。这三个字节共有24个Bit，以6bit为单位分为4个组，每个组以十进制来表示所出现的数值只会落在0到63之间。以所对应值的位置字符代替。+-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz，共64个字符。<br>跟base64字符相比，UUencode多一个“-” 字符，少一个”&#x2F;” 字符</p><h2 id="一些奇奇怪怪的密码"><a href="#一些奇奇怪怪的密码" class="headerlink" title="一些奇奇怪怪的密码"></a>一些奇奇怪怪的密码</h2><p>1.Ook密码<br>2.社会主义核心价值观密码<br>3.当铺密码：<br>当前汉字有多少笔画出头，就是转化成数字几<br>4.盲文<br>5.猪圈密码<br><img src="image5.png" width="600"><br>圣骑士团密码（猪圈变种）<br><img src="image6.png" width="600"><br>6.文本加密<br><a href="https://www.qqxiuzi.cn/bianma/wenbenjiami.php">https://www.qqxiuzi.cn/bianma/wenbenjiami.php</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="隐写基础·几种常见图片隐写"><a href="#隐写基础·几种常见图片隐写" class="headerlink" title="隐写基础·几种常见图片隐写"></a>隐写基础·几种常见图片隐写</h1><h2 id="文件头隐写"><a href="#文件头隐写" class="headerlink" title="文件头隐写"></a>文件头隐写</h2><p>根据16进制查看文件类型，一般是修改了文件格式或要补全文件头</p><h2 id="IDAT块隐写"><a href="#IDAT块隐写" class="headerlink" title="IDAT块隐写"></a>IDAT块隐写</h2><p>pngdebugger可以检查crc、tweakpng可以对idat块进行操作<br>工具：pngdebugger、tweakpng<br>关于什么时候该删除什么idat块？<br>1.使用tweakpng将图片的idat块合并<br>2.在kali中使用binwalk检查idat块内的偏移值（合并前、合并后的差值）<br>3.再回到tweak根据偏移值分离IDAT块，删除多余部分，再保存即可</p><h2 id="宽高修改"><a href="#宽高修改" class="headerlink" title="宽高修改"></a>宽高修改</h2><p>高度被修改的遮住了部分信息，图片其余部分还可以正常显示<br>宽度被修改则无法正常显示<br>一般被修改过宽高的图片在kali中不能正常打开，但在windows中可以打开<br>png：width为宽，height为高<br><img src="img1.png" width="600"><br>jpg：Y,X<br><img src="img2.png" width="600"><br>bmp：LONG biWidth,biHeight<br><img src="img3.png" width="600"></p><h2 id="LSB-最低有效位"><a href="#LSB-最低有效位" class="headerlink" title="LSB 最低有效位"></a>LSB 最低有效位</h2><p>工具：stegsolve<br>仅可对png、bmp无损图片格式使用<br>LSB 隐写就是修改 RGB 颜色分量的最低二进制位（LSB），每个颜色会有 8 bit，LSB 隐写就是修改了像数中的最低的 1 bit，每个像素可以携带 3 比特的信息</p>]]></content>
     
     
     <categories>
