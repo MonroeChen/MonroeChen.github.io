@@ -19,31 +19,24 @@
   <meta name="author" content="Monroe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前置基础知识主页面模块1.Dashboard(扫描与审计)2.Target(目标)——显示目标目录结构的的一个功能3.Proxy(代理)——拦截HTTP&#x2F;S的代理服务器，作为在浏览器和目标应用程序之间的中间人，允许拦截、查看和修改在两个方向上的原始数据流。4.Spider(爬虫)——自动爬取网站目录和内容。5.Scanner(扫描器)——自动扫描web漏洞。6.Intruder(入侵)—">
+    <meta name="description" content="WiresharkWireshark过滤语法 IP过滤：ip.addr eq 192.168.1.107来源：ip.src eq 192.168.1.107目标： ip.dst eq 192.168.1.107  端口过滤tcp.port eq 80tcp.port &#x3D;&#x3D; 80目标端口80：tcp.dstport &#x3D;&#x3D; 80来源端口80：tcp.srcpor">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BurpSuit使用">
-<meta property="og:url" content="https://monroechen.github.io/2026/12/01/BurpSuit_usage/index.html">
+<meta property="og:title" content="流量分析">
+<meta property="og:url" content="https://monroechen.github.io/2026/01/14/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前置基础知识主页面模块1.Dashboard(扫描与审计)2.Target(目标)——显示目标目录结构的的一个功能3.Proxy(代理)——拦截HTTP&#x2F;S的代理服务器，作为在浏览器和目标应用程序之间的中间人，允许拦截、查看和修改在两个方向上的原始数据流。4.Spider(爬虫)——自动爬取网站目录和内容。5.Scanner(扫描器)——自动扫描web漏洞。6.Intruder(入侵)—">
+<meta property="og:description" content="WiresharkWireshark过滤语法 IP过滤：ip.addr eq 192.168.1.107来源：ip.src eq 192.168.1.107目标： ip.dst eq 192.168.1.107  端口过滤tcp.port eq 80tcp.port &#x3D;&#x3D; 80目标端口80：tcp.dstport &#x3D;&#x3D; 80来源端口80：tcp.srcpor">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://monroechen.github.io/2026/12/01/BurpSuit_usage/image1.png">
-<meta property="og:image" content="https://monroechen.github.io/2026/12/01/BurpSuit_usage/image2.png">
-<meta property="og:image" content="https://monroechen.github.io/2026/12/01/BurpSuit_usage/image3.png">
-<meta property="og:image" content="https://monroechen.github.io/2026/12/01/BurpSuit_usage/image4.png">
-<meta property="og:image" content="https://monroechen.github.io/2026/12/01/BurpSuit_usage/image5.png">
-<meta property="og:image" content="https://monroechen.github.io/2026/12/01/BurpSuit_usage/image6.png">
-<meta property="og:image" content="https://monroechen.github.io/2026/12/01/BurpSuit_usage/image7.png">
-<meta property="og:image" content="https://monroechen.github.io/2026/12/01/BurpSuit_usage/image8.png">
-<meta property="article:published_time" content="2026-11-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-01-27T11:32:31.586Z">
+<meta property="og:image" content="https://monroechen.github.io/2026/01/14/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/image1.png">
+<meta property="article:published_time" content="2026-01-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-28T08:47:10.777Z">
 <meta property="article:author" content="Monroe">
 <meta property="article:tag" content="基础知识">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://monroechen.github.io/2026/12/01/BurpSuit_usage/image1.png">
+<meta name="twitter:image" content="https://monroechen.github.io/2026/01/14/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/image1.png">
   
   
   
-  <title>BurpSuit使用 - Hexo</title>
+  <title>流量分析 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -209,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="BurpSuit使用"></span>
+            <span id="subtitle" data-typed-text="流量分析"></span>
           
         </div>
 
@@ -220,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-12-01 00:00" pubdate>
-          2026年12月1日 凌晨
+        <time datetime="2026-01-14 00:00" pubdate>
+          2026年1月14日 凌晨
         </time>
       </span>
     
@@ -232,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          832 字
+          1.3k 字
         
       </span>
     
@@ -243,7 +236,7 @@
         
         
         
-          7 分钟
+          11 分钟
         
       </span>
     
@@ -280,30 +273,125 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">BurpSuit使用</h1>
+            <h1 id="seo-header">流量分析</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="前置基础知识"><a href="#前置基础知识" class="headerlink" title="前置基础知识"></a>前置基础知识</h2><h3 id="主页面模块"><a href="#主页面模块" class="headerlink" title="主页面模块"></a>主页面模块</h3><p>1.Dashboard(扫描与审计)<br>2.Target(目标)——显示目标目录结构的的一个功能<br>3.Proxy(代理)——拦截HTTP&#x2F;S的代理服务器，作为在浏览器和目标应用程序之间的中间人，允许拦截、查看和修改在两个方向上的原始数据流。<br>4.Spider(爬虫)——自动爬取网站目录和内容。<br>5.Scanner(扫描器)——自动扫描web漏洞。<br>6.Intruder(入侵)——高度可配置的工具，可用作自动化攻击，如爆破密码、枚举目录、SQL 注入等。<br>7.Repeater(重放器)——手动操作修改重发某个单个请求。<br>8.Comparer（对比器）——对比两个请i去&#x2F;响应的差异<br>9.Sequencer(会话)——用来分析那些不可预知的应用程序会话令牌和重要数据项的随机性的工具。<br>10.Decoder(解码器)——进行手动执行或对应用程序数据者智能解码编码的工具。<br>11.Comparer(对比)——通常是通过一些相关的请求和响应得到两项数据的一个可视化的“差异”。<br>12.Logger(日志记录器)——记录和审计所有经过 Burp Proxy 的 HTTP&#x2F;HTTPS 流量<br>13.Extender(扩展)——安装插件扩展功能。</p>
-<h3 id="功能及具体使用"><a href="#功能及具体使用" class="headerlink" title="功能及具体使用"></a>功能及具体使用</h3><p>1.Proxy<br><img src="image1.png" srcset="/img/loading.gif" lazyload width="600"><br>proxy-intercept可以审计当前的请求，或者存储和发送到其他的页面进行其他的操作等<br><img src="image2.png" srcset="/img/loading.gif" lazyload width="600"><br>在其他地方导入其他的请求数据包<br>拦截当前数据包的 返回包，可以进行伪造验证等操作<br>对当前输入时候的对象进行urlcode编码，一些特殊的符号会自动转换成url编码<br><img src="image3.png" srcset="/img/loading.gif" lazyload width="600"></p>
-<p>proxy—-http hitsory模块 记录请求日志功能<br>proxy—-options模块 监听配置</p>
-<p>2.Intruder<br>将请求包发送到intruder<br><img src="image4.png" srcset="/img/loading.gif" lazyload width="600"></p>
-<ul>
-<li>Positions：设置请求中的参数及攻击类型</li>
-<li>Payloads：为上面的参数设置数据集、参数编码、加密等功能</li>
-<li>Resource Pool：指定请求线程及延时时间<img src="image5.png" srcset="/img/loading.gif" lazyload width="600"></li>
-<li>Sniper 使用一组数据集合，依次对 $ 标记的变量进行爆破，即：针对一个参数变量，使用一个数据集合<br>[使用场景：单一目标，已知用户名，密码未知]</li>
-<li>Battering ram 使用一组数据集合，同时对 $ 标记的所有变量进行爆破，即：针对多个参数变量，使用一个数据集合<br>[使用场景：两个单一目标，相互不影响]</li>
-<li>Pitchfork 使用多组数据集合，同时爆破被 $ 标记的变量，即：针对多个参数变量，使用多个数据集合<br>[使用场景：用户名和密码都未知，每个用户名只使用一个密码进行攻击]</li>
-<li>Cluster bomb 使用多组数据集合进行组合（笛卡尔积）后，依次对多个爆破点变量进行爆破，即：针对多个变量，使用多个数据集合的组合<br>[使用场景：两个目标，每个用户名使用所有密码都进行一次攻击]<img src="image6.png" srcset="/img/loading.gif" lazyload width="600">
-在 Positions 标签下，我们需要先点击右侧的「 Clear § 」按钮来清除默认的参数标签
-然后鼠标选择需要设置为变量的值，点击右侧的「 Add § 」按钮来设置它为变量
-<img src="image7.png" srcset="/img/loading.gif" lazyload width="600">
-导入字典，”start attact“进行暴破
-<img src="image8.png" srcset="/img/loading.gif" lazyload width="600">
-正确的密码长度和其他稍有不同</li>
+                <h1 id="Wireshark"><a href="#Wireshark" class="headerlink" title="Wireshark"></a>Wireshark</h1><h2 id="Wireshark过滤语法"><a href="#Wireshark过滤语法" class="headerlink" title="Wireshark过滤语法"></a>Wireshark过滤语法</h2><ul>
+<li><p>IP过滤：<br>ip.addr eq 192.168.1.107<br>来源：ip.src eq 192.168.1.107<br>目标： ip.dst eq 192.168.1.107</p>
+</li>
+<li><p>端口过滤<br>tcp.port eq 80<br>tcp.port &#x3D;&#x3D; 80<br>目标端口80：tcp.dstport &#x3D;&#x3D; 80<br>来源端口80：tcp.srcport &#x3D;&#x3D; 80<br>过滤端口范围：tcp.port &gt;&#x3D; 1 and tcp.port &lt;&#x3D; 80</p>
+</li>
+<li><p>协议过滤<br>tcp、udp、arp、icmp、http、smtp、ftp、dns、msnms、ip、oicq、bootp等</p>
+</li>
+<li><p>MAC过滤<br>eth.addr eq A0:00:00:04:C5:84<br>目标mac：eth.dst &#x3D;&#x3D; A0:00:00:04:C5:84<br>来源mac：eth.src eq A0:00:00:04:C5:84 </p>
+</li>
+<li><p>长度过滤<br>udp.length &#x3D;&#x3D; 26（udp固定长度8+udp下面那块数据包之和）<br>tcp.len &gt;&#x3D; 7 （ip数据包即tcp下面那块数据,不包括tcp本身）<br>ip.len &#x3D;&#x3D; 94 （除以太网头固定长度14,其它都算是ip.len,即从ip本身到最后）<br>frame.len &#x3D;&#x3D; 119 （整个数据包长度,从eth开始到最后）</p>
+</li>
+<li><p>http模式过滤</p>
+<img src="image1.png" srcset="/img/loading.gif" lazyload width="600">
+</li>
+<li><p>TCP参数过滤:<br>1.TCP（传输控制协议）</p>
+</li>
+<li><p>作用：提供可靠的、面向连接的通信，确保数据包按顺序传输且不丢失。</p>
+</li>
+<li><p>应用：HTTP、FTP、SMTP等基于TCP的应用协议。</p>
+</li>
+<li><p>过滤应用：可以过滤特定端口的TCP流量，如80端口（HTTP）、443端口（HTTPS）。<br>2.UDP（用户数据报协议）</p>
+</li>
+<li><p>作用：提供无连接的、不可靠的数据传输，适用于需要快速传输的小数据包的应用。</p>
+</li>
+<li><p>应用：DNS查询、视频流、在线游戏等。</p>
+</li>
+<li><p>过滤应用：可以根据应用过滤场景特定端口的UDP流量，如53端口（DNS）。</p>
+</li>
 </ul>
+<ol start="3">
+<li>ARP（地址解析协议）</li>
+</ol>
+<ul>
+<li>作用：将IP地址解析为物理MAC地址，用于同等局域网内的通信。</li>
+<li>过滤应用：可用于检测和阻止ARP欺骗攻击。</li>
+</ul>
+<ol start="4">
+<li>ICMP（互联网控制消息协议）</li>
+</ol>
+<ul>
+<li>作用：用于网络设备之间发送错误消息和操作信息，如ping命令。</li>
+<li>过滤应用：可以过滤ping请求和响应，以防止ICMP洪水攻击。</li>
+</ul>
+<ol start="5">
+<li>HTTP（超文本传输​​协议）</li>
+</ol>
+<ul>
+<li>作用：用于在Web浏览器和服务器之间传输超文本，主要用于网页访问。</li>
+<li>过滤应用：可以过滤HTTP流量以控制网页访问或监控网络使用情况。</li>
+</ul>
+<ol start="6">
+<li>SMTP（简单邮件传输协议）</li>
+</ol>
+<ul>
+<li>作用：用于电子邮件的发送和转发。</li>
+<li>过滤应用：可过滤SMTP流量以防止垃圾邮件或监控邮件通信。<br>7.FTP（文件传输协议）</li>
+<li>作用：用于在客户端和服务器之间传输文件。</li>
+<li>过滤应用：可限制或监控FTP流量以确保安全的文件传输。</li>
+</ul>
+<ol start="8">
+<li>DNS（域名系统）</li>
+</ol>
+<ul>
+<li>作用：将域名解析为IP地址。</li>
+<li>过滤应用：可以过滤DNS查询，防止以DNS欺骗攻击或拦截恶意网站。</li>
+</ul>
+<ol start="9">
+<li>MSNMS（微软网络信使服务）</li>
+</ol>
+<ul>
+<li>作用：用于即时消息传递（如旧版的Windows Messenger）。</li>
+<li>过滤应用：可以阻止即时消息应用程序的使用。</li>
+</ul>
+<ol start="10">
+<li>IP（互联网协议）</li>
+</ol>
+<ul>
+<li>作用：提供网络设备之间的基本数据传输功能。</li>
+<li>过滤应用：可以根据源或目标IP地址进行过滤，控制哪些设备可以通信。<br>11.OICQ（开放式ICQ）</li>
+<li>作用：基于ICQ协议的即时通讯软件，类似于早期的QQ。</li>
+<li>过滤应用：可以过滤此类即时通讯流量以控制员工使用情况。</li>
+</ul>
+<ol start="12">
+<li>BOOTP（引导协议）</li>
+</ol>
+<ul>
+<li>作用：用于从服务器获取IP地址等信息，类似于DHCP。</li>
+<li>过滤应用：可用于控制和监控网络中的动态IP地址分配。</li>
+</ul>
+<h1 id="jwt认证"><a href="#jwt认证" class="headerlink" title="jwt认证"></a>jwt认证</h1><p>[jwtTOKEN在线解码] <a target="_blank" rel="noopener" href="https://tooltt.com/jwt-decode/">https://tooltt.com/jwt-decode/</a></p>
+<h2 id="传统session认证："><a href="#传统session认证：" class="headerlink" title="传统session认证："></a>传统session认证：</h2><p>http无状态协议，基于cookie保存信息并在下一次发送的方式，是传统的session认证<br>缺点：用户过多时服务器开销大、限制了应用扩展力、cookie被截获时的安全问题</p>
+<h2 id="基于token的鉴权机制："><a href="#基于token的鉴权机制：" class="headerlink" title="基于token的鉴权机制："></a>基于token的鉴权机制：</h2><p>类似于http无状态，不在服务端保存信息<br>流程：</p>
+<ul>
+<li>用户使用用户名密码来请求服务器</li>
+<li>服务器进行验证用户的信息</li>
+<li>服务器通过验证发送给用户一个token</li>
+<li>客户端存储token，并在每次请求时附送上这个token值</li>
+<li>服务端验证token值，并返回数据<br>token必须要在每次请求时传递给服务端，应保存在请求头里。且服务端要支持CORS策略<br>JWT由三段信息组成：头部（header）、载荷（payload）、签证（signature）。三部分由“.”分隔连接<br>形如：xxxxxxx.yyyyyyyy.zzzzzz<br>header由两部分构成：token类型声明和加密算法名称<br>如： {<br>   ‘typ’: ‘JWT’,<br>   ‘alg’: ‘HS256’<br>}<br>然后将头部进行base64加密，便得到jwt第一部分</li>
+</ul>
+<p>payload包含声明（要求）<br>声明是关于实体(通常是用户)和其他数据的声明。声明有三种类型: registered, public 和 private。</p>
+<ul>
+<li><p>Registered claims : 这里有一组预定义的声明，它们不是强制的，但是推荐。<br>比如：iss (issuer), exp (expiration time), sub (subject), aud (audience)等。</p>
+</li>
+<li><p>Public claims : 可以随意定义。</p>
+</li>
+<li><p>Private claims : 用于在同意使用它们的各方之间共享信息，并且不是注册的或公开的声明。 下面是一个例子：<br>如：{</p>
+<pre><code class="hljs">  &quot;sub&quot;: &#39;1234567890&#39;,
+        &quot;name&quot;: &#39;john&#39;,
+  &quot;admin&quot;:true
+</code></pre>
+<p>}</p>
+</li>
+</ul>
+<p>对payload进行Base64编码就得到JWT的第二部分</p>
 
                 
               </div>
@@ -327,7 +415,7 @@
   
     <span>></span>
     
-  <a href="/categories/CTF/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" class="category-chain-item">工具使用</a>
+  <a href="/categories/CTF/MISC/" class="category-chain-item">MISC</a>
   
   
 
@@ -356,8 +444,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>BurpSuit使用</div>
-      <div>https://monroechen.github.io/2026/12/01/BurpSuit_usage/</div>
+      <div>流量分析</div>
+      <div>https://monroechen.github.io/2026/01/14/流量分析/</div>
     </div>
     <div class="license-meta">
       
@@ -369,7 +457,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年12月1日</div>
+          <div>2026年1月14日</div>
         </div>
       
       
@@ -401,12 +489,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2026/12/01/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/" title="文本隐写">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">文本隐写</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2026/12/01/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/" title="文本隐写">
-                        <span class="hidden-mobile">文本隐写</span>
+                      <a href="/2025/12/01/code/" title="编码">
+                        <span class="hidden-mobile">编码</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

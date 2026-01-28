@@ -31,13 +31,54 @@
   
   
   <entry>
-    <title></title>
-    <link href="/2026/01/27/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/"/>
-    <url>/2026/01/27/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/</url>
+    <title>文本隐写</title>
+    <link href="/2026/12/01/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/"/>
+    <url>/2026/12/01/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="可见字符隐写"><a href="#可见字符隐写" class="headerlink" title="可见字符隐写"></a>可见字符隐写</h1><p>信息隐藏在可见字符，如空格数量、大小写、标点、特定位置等。<br>常见方式有：</p><ul><li>用空格数量代表0或1</li><li>首字母拼接</li><li>大小写代表0或1</li></ul><h1 id="不可见字符"><a href="#不可见字符" class="headerlink" title="不可见字符"></a>不可见字符</h1><h2 id="零宽隐写"><a href="#零宽隐写" class="headerlink" title="零宽隐写"></a>零宽隐写</h2><p>零宽度字符是一些不可见的，不可打印的字符。存在于页面中主要用于调整字符的显示格式<br>一般的文本编辑器中不可见，将文本储存为txt格式，用vim查看可以直接看到其中隐藏的零宽度字符<br>U+200B零宽度空格符 (zero-width space)  : 用于较长单词的换行分隔<br> U+FEFF零宽度非断空格符 (zero-width no-break space) : 用于阻止特定位置的换行分隔<br> U+200D零宽度连字符 (zero-width joiner) : 用于阿拉伯文与印度语系等文字中，使不会发生连字的字符间产生连字效果<br>U+200C 零宽度断字符 (zero-width non-joiner) : 用于阿拉伯文，德文，印度语系等文字中，阻止会发生连字的字符间的连字效果<br>U+200E左至右符 (left-to-right mark)  : 用于在混合文字方向的多种语言文本中（例：混合左至右书写的英语与右至左书写的希伯来语），规定排版文字书写方向为左至右<br> U+200F右至左符 (right-to-left mark) : 用于在混合文字方向的多种语言文本中，规定排版文字书写方向为右至左<br><a href="https://offdev.net/demos/zwsp-steg-js">https://offdev.net/demos/zwsp-steg-js</a><br>参考：<br>[转化为二进制的加密]<a href="https://zhuanlan.zhihu.com/p/87919817">https://zhuanlan.zhihu.com/p/87919817</a><br>[转化为Morse编码的加密]<a href="https://zhuanlan.zhihu.com/p/75992161">https://zhuanlan.zhihu.com/p/75992161</a></p><h2 id="SNOW"><a href="#SNOW" class="headerlink" title="SNOW"></a>SNOW</h2><p>SNOW 用于通过在行尾附加空格和制表符来隐藏 ASCII 文本中的消息，即文本隐写</p>]]></content>
     
     
+    <categories>
+      
+      <category>CTF</category>
+      
+      <category>MISC</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>基础知识</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>流量分析</title>
+    <link href="/2026/01/14/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/"/>
+    <url>/2026/01/14/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Wireshark"><a href="#Wireshark" class="headerlink" title="Wireshark"></a>Wireshark</h1><h2 id="Wireshark过滤语法"><a href="#Wireshark过滤语法" class="headerlink" title="Wireshark过滤语法"></a>Wireshark过滤语法</h2><ul><li><p>IP过滤：<br>ip.addr eq 192.168.1.107<br>来源：ip.src eq 192.168.1.107<br>目标： ip.dst eq 192.168.1.107</p></li><li><p>端口过滤<br>tcp.port eq 80<br>tcp.port &#x3D;&#x3D; 80<br>目标端口80：tcp.dstport &#x3D;&#x3D; 80<br>来源端口80：tcp.srcport &#x3D;&#x3D; 80<br>过滤端口范围：tcp.port &gt;&#x3D; 1 and tcp.port &lt;&#x3D; 80</p></li><li><p>协议过滤<br>tcp、udp、arp、icmp、http、smtp、ftp、dns、msnms、ip、oicq、bootp等</p></li><li><p>MAC过滤<br>eth.addr eq A0:00:00:04:C5:84<br>目标mac：eth.dst &#x3D;&#x3D; A0:00:00:04:C5:84<br>来源mac：eth.src eq A0:00:00:04:C5:84 </p></li><li><p>长度过滤<br>udp.length &#x3D;&#x3D; 26（udp固定长度8+udp下面那块数据包之和）<br>tcp.len &gt;&#x3D; 7 （ip数据包即tcp下面那块数据,不包括tcp本身）<br>ip.len &#x3D;&#x3D; 94 （除以太网头固定长度14,其它都算是ip.len,即从ip本身到最后）<br>frame.len &#x3D;&#x3D; 119 （整个数据包长度,从eth开始到最后）</p></li><li><p>http模式过滤</p><img src="image1.png" width="600"></li><li><p>TCP参数过滤:<br>1.TCP（传输控制协议）</p></li><li><p>作用：提供可靠的、面向连接的通信，确保数据包按顺序传输且不丢失。</p></li><li><p>应用：HTTP、FTP、SMTP等基于TCP的应用协议。</p></li><li><p>过滤应用：可以过滤特定端口的TCP流量，如80端口（HTTP）、443端口（HTTPS）。<br>2.UDP（用户数据报协议）</p></li><li><p>作用：提供无连接的、不可靠的数据传输，适用于需要快速传输的小数据包的应用。</p></li><li><p>应用：DNS查询、视频流、在线游戏等。</p></li><li><p>过滤应用：可以根据应用过滤场景特定端口的UDP流量，如53端口（DNS）。</p></li></ul><ol start="3"><li>ARP（地址解析协议）</li></ol><ul><li>作用：将IP地址解析为物理MAC地址，用于同等局域网内的通信。</li><li>过滤应用：可用于检测和阻止ARP欺骗攻击。</li></ul><ol start="4"><li>ICMP（互联网控制消息协议）</li></ol><ul><li>作用：用于网络设备之间发送错误消息和操作信息，如ping命令。</li><li>过滤应用：可以过滤ping请求和响应，以防止ICMP洪水攻击。</li></ul><ol start="5"><li>HTTP（超文本传输​​协议）</li></ol><ul><li>作用：用于在Web浏览器和服务器之间传输超文本，主要用于网页访问。</li><li>过滤应用：可以过滤HTTP流量以控制网页访问或监控网络使用情况。</li></ul><ol start="6"><li>SMTP（简单邮件传输协议）</li></ol><ul><li>作用：用于电子邮件的发送和转发。</li><li>过滤应用：可过滤SMTP流量以防止垃圾邮件或监控邮件通信。<br>7.FTP（文件传输协议）</li><li>作用：用于在客户端和服务器之间传输文件。</li><li>过滤应用：可限制或监控FTP流量以确保安全的文件传输。</li></ul><ol start="8"><li>DNS（域名系统）</li></ol><ul><li>作用：将域名解析为IP地址。</li><li>过滤应用：可以过滤DNS查询，防止以DNS欺骗攻击或拦截恶意网站。</li></ul><ol start="9"><li>MSNMS（微软网络信使服务）</li></ol><ul><li>作用：用于即时消息传递（如旧版的Windows Messenger）。</li><li>过滤应用：可以阻止即时消息应用程序的使用。</li></ul><ol start="10"><li>IP（互联网协议）</li></ol><ul><li>作用：提供网络设备之间的基本数据传输功能。</li><li>过滤应用：可以根据源或目标IP地址进行过滤，控制哪些设备可以通信。<br>11.OICQ（开放式ICQ）</li><li>作用：基于ICQ协议的即时通讯软件，类似于早期的QQ。</li><li>过滤应用：可以过滤此类即时通讯流量以控制员工使用情况。</li></ul><ol start="12"><li>BOOTP（引导协议）</li></ol><ul><li>作用：用于从服务器获取IP地址等信息，类似于DHCP。</li><li>过滤应用：可用于控制和监控网络中的动态IP地址分配。</li></ul><h1 id="jwt认证"><a href="#jwt认证" class="headerlink" title="jwt认证"></a>jwt认证</h1><p>[jwtTOKEN在线解码] <a href="https://tooltt.com/jwt-decode/">https://tooltt.com/jwt-decode/</a></p><h2 id="传统session认证："><a href="#传统session认证：" class="headerlink" title="传统session认证："></a>传统session认证：</h2><p>http无状态协议，基于cookie保存信息并在下一次发送的方式，是传统的session认证<br>缺点：用户过多时服务器开销大、限制了应用扩展力、cookie被截获时的安全问题</p><h2 id="基于token的鉴权机制："><a href="#基于token的鉴权机制：" class="headerlink" title="基于token的鉴权机制："></a>基于token的鉴权机制：</h2><p>类似于http无状态，不在服务端保存信息<br>流程：</p><ul><li>用户使用用户名密码来请求服务器</li><li>服务器进行验证用户的信息</li><li>服务器通过验证发送给用户一个token</li><li>客户端存储token，并在每次请求时附送上这个token值</li><li>服务端验证token值，并返回数据<br>token必须要在每次请求时传递给服务端，应保存在请求头里。且服务端要支持CORS策略<br>JWT由三段信息组成：头部（header）、载荷（payload）、签证（signature）。三部分由“.”分隔连接<br>形如：xxxxxxx.yyyyyyyy.zzzzzz<br>header由两部分构成：token类型声明和加密算法名称<br>如： {<br>   ‘typ’: ‘JWT’,<br>   ‘alg’: ‘HS256’<br>}<br>然后将头部进行base64加密，便得到jwt第一部分</li></ul><p>payload包含声明（要求）<br>声明是关于实体(通常是用户)和其他数据的声明。声明有三种类型: registered, public 和 private。</p><ul><li><p>Registered claims : 这里有一组预定义的声明，它们不是强制的，但是推荐。<br>比如：iss (issuer), exp (expiration time), sub (subject), aud (audience)等。</p></li><li><p>Public claims : 可以随意定义。</p></li><li><p>Private claims : 用于在同意使用它们的各方之间共享信息，并且不是注册的或公开的声明。 下面是一个例子：<br>如：{</p><pre><code class="hljs">  &quot;sub&quot;: &#39;1234567890&#39;,        &quot;name&quot;: &#39;john&#39;,  &quot;admin&quot;:true</code></pre><p>}</p></li></ul><p>对payload进行Base64编码就得到JWT的第二部分</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>CTF</category>
+      
+      <category>MISC</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>基础知识</tag>
+      
+    </tags>
     
   </entry>
   
