@@ -24,6 +24,8 @@
       
       <tag>基础知识</tag>
       
+      <tag>工具</tag>
+      
     </tags>
     
   </entry>
@@ -49,9 +51,22 @@
     
     <tags>
       
-      <tag>基础知识</tag>
+      <tag>基础知识笔记</tag>
       
     </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>web</title>
+    <link href="/2026/01/28/web/"/>
+    <url>/2026/01/28/web/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
     
   </entry>
   
@@ -76,7 +91,7 @@
     
     <tags>
       
-      <tag>基础知识</tag>
+      <tag>基础知识笔记</tag>
       
     </tags>
     
@@ -96,14 +111,14 @@
       
       <category>CTF</category>
       
-      <category>基础知识笔记</category>
+      <category>基础知识</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>基础知识</tag>
+      <tag>基础知识笔记</tag>
       
     </tags>
     
@@ -123,14 +138,14 @@
       
       <category>CTF</category>
       
-      <category>基础知识笔记</category>
+      <category>基础知识</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>基础知识</tag>
+      <tag>基础知识笔记</tag>
       
     </tags>
     
