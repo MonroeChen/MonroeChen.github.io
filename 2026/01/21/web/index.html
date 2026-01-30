@@ -27,7 +27,7 @@
 <meta property="og:description" content="前置知识进攻与防御进攻性安全专注于一件事：入侵系统。入侵系统可能通过利用漏洞、滥用不安全的设置以及利用未强制的访问控制策略等方式实现。红队和渗透测试人员专门从事进攻性安全。防御性安全（蓝队）与进攻性安全相反，它涉及两项主要任务：1.防止入侵发生2.在入侵发生时检测并做出适当响应与防御性安全相关的一些任务包括：  用户网络安全意识：对用户进行网络安全培训有助于防范针对其系统的各种攻击。 记录和管理资">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-01-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-01-30T16:44:38.784Z">
+<meta property="article:modified_time" content="2026-01-30T16:50:53.246Z">
 <meta property="article:author" content="Monroe">
 <meta property="article:tag" content="基础知识笔记">
 <meta name="twitter:card" content="summary_large_image">
@@ -332,7 +332,7 @@
 <li>在Linux中，查看&#x2F;var&#x2F;log&#x2F;auth.log或&#x2F;var&#x2F;log&#x2F;secure，寻找诸如“Failed password”的条目。<br>2.SQL注入攻击：</li>
 <li>Web服务器日志中，观察HTTP请求中是否存在常见的SQL注入模式，例如带有’ OR 1&#x3D;1 –、UNION SELECT等关键词的查询参数。</li>
 <li>查看access.log日志，特别是带有异常字符（如’, –, &#x3D;等）的URL请求。<br>3.XSS（跨站脚本攻击）：</li>
-<li>检查请求中是否包含常见的XSS攻击特征，比如<code>&lt;script&gt;</code>标签或<code>onerror=alert()</code>等JavaScript代码。Web服务器的access.log是重点检查对象。<br>4.扫描和探测行为：</li>
+<li>检查请求中是否包含常见的XSS攻击特征，比如<code>&lt;script&gt;</code>标签或<code>onerror=alert()</code>等JavaScript代码。Web服务器的<code>access.log</code>是重点检查对象。<br>4.扫描和探测行为：</li>
 <li>网络日志中，查看是否有来自同一IP的大量端口扫描行为（连续的多端口访问，特别是空连接）。</li>
 <li>使用工具如tcpdump、Wireshark来捕获流量，查看是否有异常的端口或IP通信。<br>5.后门和恶意软件活动：</li>
 <li>检查系统日志中是否有异常的系统服务启动、计划任务的执行，或有进程意外启动。</li>
