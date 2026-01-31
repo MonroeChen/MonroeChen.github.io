@@ -19,25 +19,28 @@
   <meta name="author" content="Monroe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="可见字符隐写信息隐藏在可见字符，如空格数量、大小写、标点、特定位置等。常见方式有：  用空格数量代表0或1 首字母拼接 大小写代表0或1  不可见字符零宽隐写零宽度字符是一些不可见的，不可打印的字符。存在于页面中主要用于调整字符的显示格式一般的文本编辑器中不可见，将文本储存为txt格式，用vim查看可以直接看到其中隐藏的零宽度字符U+200B零宽度空格符 (zero-width space)  :">
+    <meta name="description" content="文本隐写编码方式1crypto的内容有些多，因此有关内容我在“编码”中单独写了一篇，记录常见的编码方式 常见编码方式  可见字符隐写信息隐藏在可见字符，如空格数量、大小写、标点、特定位置等。常见方式有：  用空格数量代表0或1 首字母拼接 大小写代表0或1  不可见字符隐写零宽隐写零宽度字符是一些不可见的，不可打印的字符。存在于页面中主要用于调整字符的显示格式一般的文本编辑器中不可见，将文本储存为">
 <meta property="og:type" content="article">
-<meta property="og:title" content="文本隐写">
+<meta property="og:title" content="隐写">
 <meta property="og:url" content="https://monroechen.github.io/2025/12/01/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="可见字符隐写信息隐藏在可见字符，如空格数量、大小写、标点、特定位置等。常见方式有：  用空格数量代表0或1 首字母拼接 大小写代表0或1  不可见字符零宽隐写零宽度字符是一些不可见的，不可打印的字符。存在于页面中主要用于调整字符的显示格式一般的文本编辑器中不可见，将文本储存为txt格式，用vim查看可以直接看到其中隐藏的零宽度字符U+200B零宽度空格符 (zero-width space)  :">
+<meta property="og:description" content="文本隐写编码方式1crypto的内容有些多，因此有关内容我在“编码”中单独写了一篇，记录常见的编码方式 常见编码方式  可见字符隐写信息隐藏在可见字符，如空格数量、大小写、标点、特定位置等。常见方式有：  用空格数量代表0或1 首字母拼接 大小写代表0或1  不可见字符隐写零宽隐写零宽度字符是一些不可见的，不可打印的字符。存在于页面中主要用于调整字符的显示格式一般的文本编辑器中不可见，将文本储存为">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://monroechen.github.io/2025/12/01/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/image1.png">
+<meta property="og:image" content="https://monroechen.github.io/2025/12/01/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/img1.png">
+<meta property="og:image" content="https://monroechen.github.io/2025/12/01/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/img2.png">
+<meta property="og:image" content="https://monroechen.github.io/2025/12/01/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/img3.png">
 <meta property="article:published_time" content="2025-11-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-01-31T03:18:35.960Z">
+<meta property="article:modified_time" content="2026-01-31T05:25:13.759Z">
 <meta property="article:author" content="Monroe">
-<meta property="article:tag" content="MISC">
 <meta property="article:tag" content="基础知识笔记">
+<meta property="article:tag" content="MISC">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://monroechen.github.io/2025/12/01/%E6%96%87%E6%9C%AC%E9%9A%90%E5%86%99/image1.png">
   
   
   
-  <title>文本隐写 - Hexo</title>
+  <title>隐写 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -203,7 +206,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="文本隐写"></span>
+            <span id="subtitle" data-typed-text="隐写"></span>
           
         </div>
 
@@ -226,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          611 字
+          1.2k 字
         
       </span>
     
@@ -237,7 +240,7 @@
         
         
         
-          6 分钟
+          10 分钟
         
       </span>
     
@@ -274,25 +277,35 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">文本隐写</h1>
+            <h1 id="seo-header">隐写</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="可见字符隐写"><a href="#可见字符隐写" class="headerlink" title="可见字符隐写"></a>可见字符隐写</h1><p>信息隐藏在可见字符，如空格数量、大小写、标点、特定位置等。<br>常见方式有：</p>
+                <h1 id="文本隐写"><a href="#文本隐写" class="headerlink" title="文本隐写"></a>文本隐写</h1><h2 id="编码方式"><a href="#编码方式" class="headerlink" title="编码方式"></a>编码方式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">crypto的内容有些多，因此有关内容我在“编码”中单独写了一篇，记录常见的编码方式<br></code></pre></td></tr></table></figure>
+<a href="/2025/12/01/code/" title="编码">常见编码方式</a>
+
+<h2 id="可见字符隐写"><a href="#可见字符隐写" class="headerlink" title="可见字符隐写"></a>可见字符隐写</h2><p>信息隐藏在可见字符，如空格数量、大小写、标点、特定位置等。<br>常见方式有：</p>
 <ul>
 <li>用空格数量代表0或1</li>
 <li>首字母拼接</li>
 <li>大小写代表0或1</li>
 </ul>
-<h1 id="不可见字符"><a href="#不可见字符" class="headerlink" title="不可见字符"></a>不可见字符</h1><h2 id="零宽隐写"><a href="#零宽隐写" class="headerlink" title="零宽隐写"></a>零宽隐写</h2><p>零宽度字符是一些不可见的，不可打印的字符。存在于页面中主要用于调整字符的显示格式<br>一般的文本编辑器中不可见，将文本储存为txt格式，用vim查看可以直接看到其中隐藏的零宽度字符<br>U+200B零宽度空格符 (zero-width space)  : 用于较长单词的换行分隔<br> U+FEFF零宽度非断空格符 (zero-width no-break space) : 用于阻止特定位置的换行分隔<br> U+200D零宽度连字符 (zero-width joiner) : 用于阿拉伯文与印度语系等文字中，使不会发生连字的字符间产生连字效果<br>U+200C 零宽度断字符 (zero-width non-joiner) : 用于阿拉伯文，德文，印度语系等文字中，阻止会发生连字的字符间的连字效果<br>U+200E左至右符 (left-to-right mark)  : 用于在混合文字方向的多种语言文本中（例：混合左至右书写的英语与右至左书写的希伯来语），规定排版文字书写方向为左至右<br> U+200F右至左符 (right-to-left mark) : 用于在混合文字方向的多种语言文本中，规定排版文字书写方向为右至左<br><a target="_blank" rel="noopener" href="https://offdev.net/demos/zwsp-steg-js">https://offdev.net/demos/zwsp-steg-js</a><br>参考：<br>[转化为二进制的加密]<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/87919817">https://zhuanlan.zhihu.com/p/87919817</a><br>[转化为Morse编码的加密]<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/75992161">https://zhuanlan.zhihu.com/p/75992161</a></p>
-<h2 id="SNOW"><a href="#SNOW" class="headerlink" title="SNOW"></a>SNOW</h2><p>SNOW 用于通过在行尾附加空格和制表符来隐藏 ASCII 文本中的消息，即文本隐写</p>
-<h1 id="压缩包"><a href="#压缩包" class="headerlink" title="压缩包"></a>压缩包</h1><p>1.伪加密<br>一个zip文件由三部分组成：<br>压缩源文件数据区、压缩源文件目录区、压缩源文件目录结束标志<br><img src="image1.png" srcset="/img/loading.gif" lazyload width="600"><br>zip 压缩源文件目录区的全局方式位标记改为奇数 01 00 或者 09 00，就是伪加密</p>
+<h2 id="不可见字符隐写"><a href="#不可见字符隐写" class="headerlink" title="不可见字符隐写"></a>不可见字符隐写</h2><h3 id="零宽隐写"><a href="#零宽隐写" class="headerlink" title="零宽隐写"></a>零宽隐写</h3><p>零宽度字符是一些不可见的，不可打印的字符。存在于页面中主要用于调整字符的显示格式<br>一般的文本编辑器中不可见，将文本储存为txt格式，用vim查看可以直接看到其中隐藏的零宽度字符<br>U+200B零宽度空格符 (zero-width space)  : 用于较长单词的换行分隔<br> U+FEFF零宽度非断空格符 (zero-width no-break space) : 用于阻止特定位置的换行分隔<br> U+200D零宽度连字符 (zero-width joiner) : 用于阿拉伯文与印度语系等文字中，使不会发生连字的字符间产生连字效果<br>U+200C 零宽度断字符 (zero-width non-joiner) : 用于阿拉伯文，德文，印度语系等文字中，阻止会发生连字的字符间的连字效果<br>U+200E左至右符 (left-to-right mark)  : 用于在混合文字方向的多种语言文本中（例：混合左至右书写的英语与右至左书写的希伯来语），规定排版文字书写方向为左至右<br> U+200F右至左符 (right-to-left mark) : 用于在混合文字方向的多种语言文本中，规定排版文字书写方向为右至左<br><a target="_blank" rel="noopener" href="https://offdev.net/demos/zwsp-steg-js">https://offdev.net/demos/zwsp-steg-js</a><br>参考：<br>[转化为二进制的加密]<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/87919817">https://zhuanlan.zhihu.com/p/87919817</a><br>[转化为Morse编码的加密]<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/75992161">https://zhuanlan.zhihu.com/p/75992161</a></p>
+<h3 id="SNOW"><a href="#SNOW" class="headerlink" title="SNOW"></a>SNOW</h3><p>SNOW 用于通过在行尾附加空格和制表符来隐藏 ASCII 文本中的消息，即文本隐写</p>
+<h2 id="压缩包"><a href="#压缩包" class="headerlink" title="压缩包"></a>压缩包</h2><p>1.伪加密<br>一个zip文件由三部分组成：<br>压缩源文件数据区、压缩源文件目录区、压缩源文件目录结束标志<br><img src="image1.png" srcset="/img/loading.gif" lazyload width="600"><br>zip 压缩源文件目录区的全局方式位标记改为奇数 01 00 或者 09 00，就是伪加密</p>
 <p>2.破解</p>
 <ul>
 <li>字典暴破&#x2F;掩码攻击&#x2F;已知明文攻击<br>工具：ziperello，ARCHPR</li>
 <li>CRC32碰撞<br>CRC32算法通过对输入数据的每个字节运算，生成一个32位的校验和。CRC暴破是基于已知的校验和尝试找出原始输入数据，通过遍历可能的输入数据，可以找到匹配的原始值</li>
 </ul>
+<h1 id="图片隐写"><a href="#图片隐写" class="headerlink" title="图片隐写"></a>图片隐写</h1><h2 id="文件头隐写"><a href="#文件头隐写" class="headerlink" title="文件头隐写"></a>文件头隐写</h2><p>根据16进制查看文件类型，一般是修改了文件格式或要补全文件头</p>
+<h2 id="IDAT块隐写"><a href="#IDAT块隐写" class="headerlink" title="IDAT块隐写"></a>IDAT块隐写</h2><p>pngdebugger可以检查crc、tweakpng可以对idat块进行操作<br>工具：pngdebugger、tweakpng<br>关于什么时候该删除什么idat块？<br>1.使用tweakpng将图片的idat块合并<br>2.在kali中使用binwalk检查idat块内的偏移值（合并前、合并后的差值）<br>3.再回到tweak根据偏移值分离IDAT块，删除多余部分，再保存即可</p>
+<h2 id="宽高修改"><a href="#宽高修改" class="headerlink" title="宽高修改"></a>宽高修改</h2><p>高度被修改的遮住了部分信息，图片其余部分还可以正常显示<br>宽度被修改则无法正常显示<br>一般被修改过宽高的图片在kali中不能正常打开，但在windows中可以打开<br>png：width为宽，height为高<br><img src="img1.png" srcset="/img/loading.gif" lazyload width="600"><br>jpg：Y,X<br><img src="img2.png" srcset="/img/loading.gif" lazyload width="600"><br>bmp：LONG biWidth,biHeight<br><img src="img3.png" srcset="/img/loading.gif" lazyload width="600"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#同时爆破宽度和高度</span><br>import zlib<br>import struct<br>filename = <span class="hljs-string">&quot;misc.png&quot;</span><br>with open(filename, <span class="hljs-string">&#x27;rb&#x27;</span>) as f:<br>all_b = f.read()<br>data = bytearray(all_b[12:29])<br>n = 4095<br><span class="hljs-keyword">for</span> w <span class="hljs-keyword">in</span> range(n):<br>width = bytearray(struct.pack(<span class="hljs-string">&#x27;&gt;i&#x27;</span>, w))<br><span class="hljs-keyword">for</span> h <span class="hljs-keyword">in</span> range(n):<br>height = bytearray(struct.pack(<span class="hljs-string">&#x27;&gt;i&#x27;</span>, h))<br><span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(4):<br>data[x+4] = width[x]<br>data[x+8] = height[x]<br>crc32result = zlib.crc32(data)<br><span class="hljs-comment">#替换成图片的crc 在010中为第二行后三个，和第三行第一个</span><br><span class="hljs-keyword">if</span> crc32result == 0x76EC1E40:<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;宽为：&quot;</span>, end = <span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(width, end = <span class="hljs-string">&#x27; &#x27;</span>)<br><span class="hljs-built_in">print</span>(int.from_bytes(width, byteorder=<span class="hljs-string">&#x27;big&#x27;</span>))<br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;高为：&quot;</span>, end = <span class="hljs-string">&#x27;&#x27;</span>)<br><span class="hljs-built_in">print</span>(height, end = <span class="hljs-string">&#x27; &#x27;</span>)<br><span class="hljs-built_in">print</span>(int.from_bytes(height, byteorder=<span class="hljs-string">&#x27;big&#x27;</span>))<br></code></pre></td></tr></table></figure>
+
+<h2 id="文件分离"><a href="#文件分离" class="headerlink" title="文件分离"></a>文件分离</h2><p>有时候会把几个文件合并成一个文件，例如在一张图片中隐藏一个压缩包，flag很有可能藏在压缩包中，这时候需要分离文件将压缩包拿出来。<br>在kali中：<br>binwalk命令可以检测是否有其他文件存在<br>foremost命令可以直接分离图片</p>
+<h2 id="LSB-最低有效位"><a href="#LSB-最低有效位" class="headerlink" title="LSB 最低有效位"></a>LSB 最低有效位</h2><p>工具：stegsolve<br>仅可对png、bmp无损图片格式使用<br>LSB 隐写就是修改 RGB 颜色分量的最低二进制位（LSB），每个颜色会有 8 bit，LSB 隐写就是修改了像数中的最低的 1 bit，每个像素可以携带 3 比特的信息</p>
 
                 
               </div>
@@ -340,9 +353,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/MISC/" class="print-no-link">#MISC</a>
-      
         <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/" class="print-no-link">#基础知识笔记</a>
+      
+        <a href="/tags/MISC/" class="print-no-link">#MISC</a>
       
     </div>
   
@@ -354,7 +367,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>文本隐写</div>
+      <div>隐写</div>
       <div>https://monroechen.github.io/2025/12/01/文本隐写/</div>
     </div>
     <div class="license-meta">
@@ -399,9 +412,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/12/01/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/" title="图片隐写">
+                      <a href="/2025/12/01/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/" title="隐写基础_文件结构">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">图片隐写</span>
+                        <span class="hidden-mobile">隐写基础_文件结构</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
