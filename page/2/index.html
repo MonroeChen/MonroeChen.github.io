@@ -80,6 +80,30 @@
 <body>
   
 
+ <!-- 视频背景 + 遮罩层 -->
+  <video id="bg-video" autoplay loop muted style="
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -999;
+    object-fit: cover;
+  ">
+    <source src="/img/liang.mp4" type="video/mp4">
+  </video>
+  <div style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -998;
+  "></div>
+
   <header>
     
 
@@ -302,83 +326,6 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2025/12/01/%E9%9A%90%E5%86%99%E5%9F%BA%E7%A1%80_%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" target="_self">
-          隐写基础_文件结构
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/12/01/%E9%9A%90%E5%86%99%E5%9F%BA%E7%A1%80_%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" target="_self">
-        <div>
-          隐写基础知识_文件结构  常见文件类型png12文件头：89 50 4E 47 0D 0A 1A 0A文件尾：49 45 4E 44 AE 42 60 82 构成：文件头 + 三个以上png数据块数据块：1.关键数据块（标准数据块）—— 4 个标准数据块，PNG必需的数据块 包括：文件头数据块（IHDR）， 调色板数据块（PLTE）             图像数据块（IDAT），图像结束数据块（
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-12-01 00:00" pubdate>
-              2025-12-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/CTF/" class="category-chain-item">CTF</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/CTF/MISC/" class="category-chain-item">MISC</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/CTF/MISC/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9A%90%E5%86%99/" class="category-chain-item">基础知识_隐写</a>
-  
-  
-
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/">#基础知识笔记</a>
-            
-              <a href="/tags/MISC/">#MISC</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
         <a href="/2025/12/01/%E9%9A%90%E5%86%99/" target="_self">
           隐写
         </a>
@@ -440,9 +387,86 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
+              <a href="/tags/MISC/">#MISC</a>
+            
               <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/">#基础知识笔记</a>
             
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/12/01/%E9%9A%90%E5%86%99%E5%9F%BA%E7%A1%80_%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" target="_self">
+          隐写基础_文件结构
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/12/01/%E9%9A%90%E5%86%99%E5%9F%BA%E7%A1%80_%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" target="_self">
+        <div>
+          隐写基础知识_文件结构  常见文件类型png12文件头：89 50 4E 47 0D 0A 1A 0A文件尾：49 45 4E 44 AE 42 60 82 构成：文件头 + 三个以上png数据块数据块：1.关键数据块（标准数据块）—— 4 个标准数据块，PNG必需的数据块 包括：文件头数据块（IHDR）， 调色板数据块（PLTE）             图像数据块（IDAT），图像结束数据块（
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-12-01 00:00" pubdate>
+              2025-12-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CTF/" class="category-chain-item">CTF</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CTF/MISC/" class="category-chain-item">MISC</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CTF/MISC/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9A%90%E5%86%99/" class="category-chain-item">基础知识_隐写</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
               <a href="/tags/MISC/">#MISC</a>
+            
+              <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/">#基础知识笔记</a>
             
           </div>
         
