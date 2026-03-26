@@ -80,29 +80,42 @@
 <body>
   
 
- <!-- 视频背景 + 遮罩层 -->
-  <video id="bg-video" autoplay loop muted style="
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -999;
-    object-fit: cover;
-  ">
-    <source src="/img/liang.mp4" type="video/mp4">
-  </video>
-  <div style="
+  <!-- 全屏视频背景 -->
+  <div class="fullscreen-video" style="
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: -998;
+    overflow: hidden;
+    z-index: -2;
+  ">
+    <video autoplay loop muted style="
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    ">
+      <source src="/video/your-video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+   <!-- 遮罩层 - 使用主题配置的透明度 -->
+  <div class="video-mask" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
   "></div>
+  
 
   <header>
     
@@ -326,83 +339,6 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2025/12/01/%E9%9A%90%E5%86%99/" target="_self">
-          隐写
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/12/01/%E9%9A%90%E5%86%99/" target="_self">
-        <div>
-          文本隐写编码方式1crypto的内容有些多，因此有关内容我在“编码”中单独写了一篇，记录常见的编码方式 常见编码方式  可见字符隐写信息隐藏在可见字符，如空格数量、大小写、标点、特定位置等。常见方式有：  用空格数量代表0或1 首字母拼接 大小写代表0或1  不可见字符隐写零宽隐写零宽度字符是一些不可见的，不可打印的字符。存在于页面中主要用于调整字符的显示格式一般的文本编辑器中不可见，将文本储存为
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-12-01 00:00" pubdate>
-              2025-12-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/CTF/" class="category-chain-item">CTF</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/CTF/MISC/" class="category-chain-item">MISC</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/CTF/MISC/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9A%90%E5%86%99/" class="category-chain-item">基础知识_隐写</a>
-  
-  
-
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/MISC/">#MISC</a>
-            
-              <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/">#基础知识笔记</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
         <a href="/2025/12/01/%E9%9A%90%E5%86%99%E5%9F%BA%E7%A1%80_%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" target="_self">
           隐写基础_文件结构
         </a>
@@ -464,9 +400,86 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
+              <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/">#基础知识笔记</a>
+            
               <a href="/tags/MISC/">#MISC</a>
             
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2025/12/01/%E9%9A%90%E5%86%99/" target="_self">
+          隐写
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2025/12/01/%E9%9A%90%E5%86%99/" target="_self">
+        <div>
+          文本隐写编码方式1crypto的内容有些多，因此有关内容我在“编码”中单独写了一篇，记录常见的编码方式 常见编码方式  可见字符隐写信息隐藏在可见字符，如空格数量、大小写、标点、特定位置等。常见方式有：  用空格数量代表0或1 首字母拼接 大小写代表0或1  不可见字符隐写零宽隐写零宽度字符是一些不可见的，不可打印的字符。存在于页面中主要用于调整字符的显示格式一般的文本编辑器中不可见，将文本储存为
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2025-12-01 00:00" pubdate>
+              2025-12-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CTF/" class="category-chain-item">CTF</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CTF/MISC/" class="category-chain-item">MISC</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/CTF/MISC/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9A%90%E5%86%99/" class="category-chain-item">基础知识_隐写</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
               <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/">#基础知识笔记</a>
+            
+              <a href="/tags/MISC/">#MISC</a>
             
           </div>
         
