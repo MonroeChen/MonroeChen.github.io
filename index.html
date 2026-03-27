@@ -83,7 +83,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 100vh;">
+<div class="header-inner" style="height: 80vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -213,7 +213,7 @@
     
       <div class="container nopadding-x-md">
         <div id="board"
-          style="margin-top: 0">
+          >
           
           <div class="container">
             <div class="row">
@@ -410,60 +410,6 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2026/01/21/%E5%85%B6%E4%BB%96%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/" target="_self">
-          课设/实验
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2026/01/21/%E5%85%B6%E4%BB%96%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/" target="_self">
-        <div>
-          C语言实验 1.采用结构体数组或链表存储数据，设计一个小型的隐私信息管理系统 2.根据指定汉字生成电子印章：从键盘输入4个汉字，程序能根据汉字的编码在隶书56点阵汉字字库文本文件LiShu56txt 中查找相应汉字的字型点阵信息，然后根据查得的字型点阵信息制作电子印章。实验报告 数据库系统人事管理系统的数据库设计，基本功能包含人事信息的增删查改开发工具：MySQL、IntelliJ IDEA运行环
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2026-01-21 00:00" pubdate>
-              2026-01-21
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E9%A1%B9%E7%9B%AE-%E5%AE%9E%E9%AA%8C/" class="category-chain-item">项目/实验</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
         <a href="/2026/01/21/web/" target="_self">
           web
         </a>
@@ -521,6 +467,60 @@
               <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/">#基础知识笔记</a>
             
           </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2026/01/21/%E5%85%B6%E4%BB%96%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/" target="_self">
+          课设/实验
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2026/01/21/%E5%85%B6%E4%BB%96%E8%AF%BE%E7%A8%8B%E5%AE%9E%E9%AA%8C/" target="_self">
+        <div>
+          C语言实验 1.采用结构体数组或链表存储数据，设计一个小型的隐私信息管理系统 2.根据指定汉字生成电子印章：从键盘输入4个汉字，程序能根据汉字的编码在隶书56点阵汉字字库文本文件LiShu56txt 中查找相应汉字的字型点阵信息，然后根据查得的字型点阵信息制作电子印章。实验报告 数据库系统人事管理系统的数据库设计，基本功能包含人事信息的增删查改开发工具：MySQL、IntelliJ IDEA运行环
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2026-01-21 00:00" pubdate>
+              2026-01-21
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%A1%B9%E7%9B%AE-%E5%AE%9E%E9%AA%8C/" class="category-chain-item">项目/实验</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
         
       </div>
     </article>
@@ -966,7 +966,37 @@
       }
       var text = subtitle.getAttribute('data-typed-text');
       
-        typing(text);
+        jQuery.ajax({
+          type: 'GET',
+          url: 'https://v1.hitokoto.cn/',
+          headers: {},
+          dataType: 'json',
+          success: function(result) {
+            var apiText;
+            if (result) {
+              var keys = ''.split(',');
+              if (result instanceof Array) {
+                result = result[0];
+              }
+              for (const k of keys) {
+                var value = result[k];
+                if (typeof value === 'string') {
+                  apiText = value;
+                  break;
+                } else if (value instanceof Object) {
+                  result = value;
+                }
+              }
+            }
+            apiText ? typing(apiText) : typing(text);
+          },
+          error: function(xhr, status, error) {
+            if (error) {
+              console.error('Failed to request https://v1.hitokoto.cn/:', error);
+            }
+            typing(text);
+          }
+        })
       
     })(window, document);
   </script>
