@@ -19,23 +19,24 @@
   <meta name="author" content="Monroe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Linux系统目录   linux采用树形目录结构，“&#x2F;”是根目录，以下是根目录下的主要目录   &#x2F;bin:存放基本用户命令，所有用户可执行。 &#x2F;boot:系统启动文件，如内核文件、引导配置等。 &#x2F;dev:设备文件，即硬件设备的抽象表示。 &#x2F;etc:配置文件，存放所有服务和系统配置。 &#x2F;home:普通用户的个人目录合集。 &#x2F;li">
+    <meta name="description" content="Linux系统目录   linux采用树形目录结构，“&#x2F;”是根目录，以下是根目录下的主要目录  | &#x2F;bin | 存放基本用户命令，所有用户可执行。 || &#x2F;boot | 系统启动文件，如内核文件、引导配置等。 || &#x2F;dev | 设备文件，即硬件设备的抽象表示。 || &#x2F;etc | 配置文件，存放所有服务和系统配置。 || &#x2F;home">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Linux基础">
 <meta property="og:url" content="https://monroechen.github.io/2026/03/27/Linux%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Linux系统目录   linux采用树形目录结构，“&#x2F;”是根目录，以下是根目录下的主要目录   &#x2F;bin:存放基本用户命令，所有用户可执行。 &#x2F;boot:系统启动文件，如内核文件、引导配置等。 &#x2F;dev:设备文件，即硬件设备的抽象表示。 &#x2F;etc:配置文件，存放所有服务和系统配置。 &#x2F;home:普通用户的个人目录合集。 &#x2F;li">
+<meta property="og:description" content="Linux系统目录   linux采用树形目录结构，“&#x2F;”是根目录，以下是根目录下的主要目录  | &#x2F;bin | 存放基本用户命令，所有用户可执行。 || &#x2F;boot | 系统启动文件，如内核文件、引导配置等。 || &#x2F;dev | 设备文件，即硬件设备的抽象表示。 || &#x2F;etc | 配置文件，存放所有服务和系统配置。 || &#x2F;home">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://monroechen.github.io/2026/03/27/Linux%E5%9F%BA%E7%A1%80/1.png">
-<meta property="article:published_time" content="2026-03-27T09:35:39.833Z">
-<meta property="article:modified_time" content="2026-03-27T11:10:52.974Z">
+<meta property="article:published_time" content="2026-03-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-27T11:28:30.020Z">
 <meta property="article:author" content="Monroe">
+<meta property="article:tag" content="基础知识笔记">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://monroechen.github.io/2026/03/27/Linux%E5%9F%BA%E7%A1%80/1.png">
   
   
   
-  <title>Hexo</title>
+  <title>Linux基础 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="Linux基础"></span>
           
         </div>
 
@@ -212,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-03-27 17:35" pubdate>
-          2026年3月27日 下午
+        <time datetime="2026-03-27 00:00" pubdate>
+          2026年3月27日 凌晨
         </time>
       </span>
     
@@ -272,7 +273,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">Linux基础</h1>
             
             
               <div class="markdown-body">
@@ -282,29 +283,11 @@
 <blockquote>
 <p>linux采用树形目录结构，“&#x2F;”是根目录，以下是根目录下的主要目录</p>
 </blockquote>
-<ol>
-<li>&#x2F;bin:存放基本用户命令，所有用户可执行。</li>
-<li>&#x2F;boot:系统启动文件，如内核文件、引导配置等。</li>
-<li>&#x2F;dev:设备文件，即硬件设备的抽象表示。</li>
-<li>&#x2F;etc:配置文件，存放所有服务和系统配置。</li>
-<li>&#x2F;home:普通用户的个人目录合集。</li>
-<li>&#x2F;lib和&#x2F;lib64:系统启动库，存放放共享库文件，类似于Windows中的”.dll”文件。</li>
-<li>&#x2F;media和&#x2F;mnt:挂载点，”media”是自动挂载可移动设备的位置，”mnt”是临时手动挂载的文件系统。</li>
-<li>&#x2F;opt:第三方软件的安装位置，如”Google Chrome”,”Oracle”等。</li>
-<li>&#x2F;proc:虚拟文件系统，提供系统运行时的动态信息。</li>
-<li>&#x2F;root:超级管理员root用户的家目录。</li>
-<li>&#x2F;run:存放运行时数据，重启后会清空。</li>
-<li>&#x2F;sbin:存放系统管理命令，只有root用户可用。</li>
-<li>&#x2F;srv:存放服务相关数据，如 Web 服务、FTP 服务数据。</li>
-<li>&#x2F;sys：虚拟文件系统，提供硬件信息与内核接口。</li>
-<li>&#x2F;tmp:临时文件，重启后清空。</li>
-<li>&#x2F;user:存放系统软件和用户程序，类似于Windows的”Program Files”。</li>
-<li>&#x2F;var:存放可变数据，如日志，缓存，队列等。</li>
-</ol>
+<p>| &#x2F;bin | 存放基本用户命令，所有用户可执行。 |<br>| &#x2F;boot | 系统启动文件，如内核文件、引导配置等。 |<br>| &#x2F;dev | 设备文件，即硬件设备的抽象表示。 |<br>| &#x2F;etc | 配置文件，存放所有服务和系统配置。 |<br>| &#x2F;home | 普通用户的个人目录合集。 |<br>| &#x2F;lib 和 &#x2F;lib64 | 系统启动库，存放共享库文件，类似于 Windows 中的 <code>.dll</code> 文件。 |<br>| &#x2F;media 和 &#x2F;mnt | 挂载点，<code>/media</code> 是自动挂载可移动设备的位置，<code>/mnt</code> 是临时手动挂载的文件系统。 |<br>| &#x2F;opt | 第三方软件的安装位置，如 Google Chrome、Oracle 等。 |<br>| &#x2F;proc | 虚拟文件系统，提供系统运行时的动态信息。 |<br>| &#x2F;root | 超级管理员 root 用户的家目录。 |<br>| &#x2F;run | 存放运行时数据，重启后会清空。 |<br>| &#x2F;sbin | 存放系统管理命令，只有 root 用户可用。 |<br>| &#x2F;srv | 存放服务相关数据，如 Web 服务、FTP 服务数据。 |<br>| &#x2F;sys | 虚拟文件系统，提供硬件信息与内核接口。 |<br>| &#x2F;tmp | 临时文件，重启后清空。 |<br>| &#x2F;usr | 存放系统软件和用户程序，类似于 Windows 的 “Program Files”。 |<br>| &#x2F;var | 存放可变数据，如日志、缓存、队列等。 |</p>
 <h2 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h2><h3 id="apt命令"><a href="#apt命令" class="headerlink" title="apt命令"></a>apt命令</h3><blockquote>
 <p>apt 命令执行需要超级管理员权限(root),apt提供查找、安装、升级、删除软件包的命令</p>
 </blockquote>
-<p>更新软件包列表<br>    <code>sudo apt update</code><br>列出可升级的软件包<br>    <code>apt list --upgradable</code><br>升级所有已安装的软件包<br>    <code>sudo apt upgrade</code><br>搜索软件包<br>    <code>apt search &lt;keyword&gt;</code><br>查看软件包信息<br>    <code>apt show &lt;package-name&gt;</code><br>安装软件包<br>    <code>sudo apt install &lt;package-name&gt;</code><br>卸载软件包（保留配置文件）<br>    <code>sudo apt remove &lt;package-name&gt;</code><br>彻底卸载（删除配置文件）<br>    <code>sudo apt purge &lt;package-name&gt;</code><br>清理下载的deb安装包<br>    <code>sudo apt autoremove    # 删除不需要的依赖</code><br>    <code>sudo apt autoclean     # 清理旧版本缓存</code></p>
+<p>更新软件包列表<br>    <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo apt update</span><br></code></pre></td></tr></table></figure><br>列出可升级的软件包<br>    <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">apt list <span class="hljs-comment">--upgradable</span><br></code></pre></td></tr></table></figure><br>升级所有已安装的软件包<br>    <code>sudo apt upgrade</code><br>搜索软件包<br>    <code>apt search &lt;keyword&gt;</code><br>查看软件包信息<br>    <code>apt show &lt;package-name&gt;</code><br>安装软件包<br>    <code>sudo apt install &lt;package-name&gt;</code><br>卸载软件包（保留配置文件）<br>    <code>sudo apt remove &lt;package-name&gt;</code><br>彻底卸载（删除配置文件）<br>    <code>sudo apt purge &lt;package-name&gt;</code><br>清理下载的deb安装包<br>    <code>sudo apt autoremove    # 删除不需要的依赖</code><br>    <code>sudo apt autoclean     # 清理旧版本缓存</code></p>
 <h3 id="处理目录的常用命令"><a href="#处理目录的常用命令" class="headerlink" title="处理目录的常用命令"></a>处理目录的常用命令</h3><p>查看当前目录<br>    <code>pwd    # print working directory</code><br>切换目录<br>    <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli"><span class="hljs-keyword">cd</span> <span class="hljs-string">/path/to/dir</span>        <span class="hljs-comment"># 切换到指定目录</span><br><span class="hljs-keyword">cd</span> ~                   <span class="hljs-comment"># 切换到用户家目录</span><br><span class="hljs-keyword">cd</span> <span class="hljs-string">..</span>                  <span class="hljs-comment"># 切换到上级目录</span><br><span class="hljs-keyword">cd</span> -                   <span class="hljs-comment"># 切换到上次访问的目录</span><br></code></pre></td></tr></table></figure><br>列出目录内容<br>    <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">ls</span>                     <span class="hljs-comment"># 列出当前目录</span><br><span class="hljs-built_in">ls</span> <span class="hljs-literal">-l</span>                  <span class="hljs-comment"># 详细列表形式</span><br><span class="hljs-built_in">ls</span> <span class="hljs-literal">-a</span>                  <span class="hljs-comment"># 显示所有文件（包括隐藏文件）</span><br><span class="hljs-built_in">ls</span> <span class="hljs-literal">-lh</span>                 <span class="hljs-comment"># 人类可读的格式（显示文件大小）</span><br><span class="hljs-built_in">ls</span> <span class="hljs-operator">-lt</span>                 <span class="hljs-comment"># 按修改时间排序</span><br></code></pre></td></tr></table></figure><br>创建目录<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> <span class="hljs-built_in">dirname</span>          <span class="hljs-comment"># 创建单个目录</span><br><span class="hljs-built_in">mkdir</span> -p dir1/dir2     <span class="hljs-comment"># 递归创建多级目录</span><br><span class="hljs-built_in">mkdir</span> -m 755 <span class="hljs-built_in">dirname</span>   <span class="hljs-comment"># 创建并设置权限</span><br></code></pre></td></tr></table></figure><br>删除目录<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">rmdir</span> emptydir         <span class="hljs-comment"># 只能删除空目录</span><br><span class="hljs-built_in">rm</span> -r <span class="hljs-built_in">dirname</span>          <span class="hljs-comment"># 递归删除非空目录</span><br><span class="hljs-built_in">rm</span> -rf <span class="hljs-built_in">dirname</span>         <span class="hljs-comment"># 强制删除（危险操作！）</span><br></code></pre></td></tr></table></figure></p>
 <p>复制目录<br>    <code>cp -r source/ target/  # 递归复制整个目录</code></p>
 <p>移动&#x2F;重命名目录<br>    <code>mv oldname newname     # 重命名</code><br>   <code> mv dir1/ /path/dir2/   # 移动目录</code></p>
@@ -334,6 +317,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/" class="print-no-link">#基础知识笔记</a>
+      
+    </div>
   
 </div>
 
@@ -343,7 +354,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
+      <div>Linux基础</div>
       <div>https://monroechen.github.io/2026/03/27/Linux基础/</div>
     </div>
     <div class="license-meta">
