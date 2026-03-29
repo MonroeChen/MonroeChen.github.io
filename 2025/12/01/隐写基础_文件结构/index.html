@@ -1,0 +1,732 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#b0c4de">
+  <meta name="author" content="Monroe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="隐写基础知识_文件结构  常见文件类型png12文件头：89 50 4E 47 0D 0A 1A 0A文件尾：49 45 4E 44 AE 42 60 82 构成：文件头 + 三个以上png数据块数据块：1.关键数据块（标准数据块）—— 4 个标准数据块，PNG必需的数据块 包括：文件头数据块（IHDR）， 调色板数据块（PLTE）             图像数据块（IDAT），图像结束数据块（">
+<meta property="og:type" content="article">
+<meta property="og:title" content="隐写基础_文件结构">
+<meta property="og:url" content="https://monroechen.github.io/2025/12/01/%E9%9A%90%E5%86%99%E5%9F%BA%E7%A1%80_%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="隐写基础知识_文件结构  常见文件类型png12文件头：89 50 4E 47 0D 0A 1A 0A文件尾：49 45 4E 44 AE 42 60 82 构成：文件头 + 三个以上png数据块数据块：1.关键数据块（标准数据块）—— 4 个标准数据块，PNG必需的数据块 包括：文件头数据块（IHDR）， 调色板数据块（PLTE）             图像数据块（IDAT），图像结束数据块（">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://monroechen.github.io/2025/12/01/%E9%9A%90%E5%86%99%E5%9F%BA%E7%A1%80_%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="https://monroechen.github.io/2025/12/01/%E9%9A%90%E5%86%99%E5%9F%BA%E7%A1%80_%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/JPG.png">
+<meta property="og:image" content="https://monroechen.github.io/2025/12/01/%E9%9A%90%E5%86%99%E5%9F%BA%E7%A1%80_%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/APNG1.png">
+<meta property="og:image" content="https://monroechen.github.io/2025/12/01/%E9%9A%90%E5%86%99%E5%9F%BA%E7%A1%80_%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/APNG2.png">
+<meta property="article:published_time" content="2025-11-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-29T15:30:53.555Z">
+<meta property="article:author" content="Monroe">
+<meta property="article:tag" content="基础知识笔记">
+<meta property="article:tag" content="MISC">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://monroechen.github.io/2025/12/01/%E9%9A%90%E5%86%99%E5%9F%BA%E7%A1%80_%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.png">
+  
+  
+  
+  <title>隐写基础_文件结构 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"monroechen.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Monroe</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner1.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="隐写基础_文件结构"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-12-01 00:00" pubdate>
+          2025年12月1日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">隐写基础_文件结构</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="隐写基础知识-文件结构"><a href="#隐写基础知识-文件结构" class="headerlink" title="隐写基础知识_文件结构"></a>隐写基础知识_文件结构</h1><img src="文件结构.png" srcset="/img/loading.gif" lazyload width="600">
+
+<h2 id="常见文件类型"><a href="#常见文件类型" class="headerlink" title="常见文件类型"></a>常见文件类型</h2><h3 id="png"><a href="#png" class="headerlink" title="png"></a>png</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">文件头：89 50 4E 47 0D 0A 1A 0A<br>文件尾：49 45 4E 44 AE 42 60 82<br></code></pre></td></tr></table></figure>
+<p>构成：文件头 + 三个以上png数据块<br>数据块：<br>1.关键数据块（标准数据块）—— 4 个标准数据块，PNG必需的数据块<br> 包括：文件头数据块（IHDR）， 调色板数据块（PLTE）<br>             图像数据块（IDAT），图像结束数据块（IEND）<br>IHEAD：包括了图片的宽，高，图像深度，颜色类型，压缩方法等</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">PLTE（palette chunk调色板数据块）：包含与索引彩色图像（indexed-color image）相关的彩色变换数据，它仅与索引彩色图像有关，且要放在图像数据块（image data chunk）之前。真彩色的 PNG 数据流也可以有调色板数据块，目的是便于非真彩色显示程序用它来量化图像数据，从而显示该图像。<br>IDAT（image data chunk图像数据块）：存储实际的数据，在数据流中可包含多个连续顺序的图像数据块。IDAT 块只有当上一个块充满时，才会继续一个新的块<br></code></pre></td></tr></table></figure>
+<p>IDAT隐写基础<br> IEND（image trailer chunk图像结束数据）：标记 PNG 文件或者数据流结束，必须放在文件尾部</p>
+<p>2.辅助数据块（可选数据块）<br>包括：tRNS、bKGD、gAMA、sBIT等。</p>
+<h3 id="JPG"><a href="#JPG" class="headerlink" title="JPG"></a>JPG</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">文件头：FF D8<br>文件尾：FF D9<br></code></pre></td></tr></table></figure>
+<p>JPEG 是有损压缩格式，将像素信息用 JPEG 保存成文件再读取出来，其中某些像素值会有少许变化。保存时质量参数可在 0 至 100 之间选择，参数越大图片就越保真，但体积也越大。一般情况下选择 70 或 80<br><img src="JPG.png" srcset="/img/loading.gif" lazyload width="600"></p>
+<h3 id="APNG"><a href="#APNG" class="headerlink" title="APNG"></a>APNG</h3><p>APNG（Animated Portable Network Graphics，Animated PNG）是基于 PNG 格式扩展的一种位图动画格式，增加了对动画图像的支持，同时加入了 24 位真彩色图像和 8 位 Alpha 透明度的支持，动画拥有更好的质量。</p>
+<ul>
+<li><p>相比 gif 可以容纳更多的色彩;且向下兼容 png 格式图片</p>
+</li>
+<li><p>支持 alpha 透明通道</p>
+</li>
+<li><p>图片体积相比 gif 更小<br>除 APNG 外，常见的动画格式还有 GIF 和 WebP，区别如下</p>
+<img src="APNG1.png" srcset="/img/loading.gif" lazyload width="600">
+APNG 在 PNG 的基础上增加了 acTL、fcTL 和 fdAT 3 种块
+<img src="APNG2.png" srcset="/img/loading.gif" lazyload width="600">
+</li>
+<li><p>acTL：动画控制块，包含了图片的帧数和循环次数（ 0 表示无限循环）</p>
+</li>
+<li><p>fcTL：帧控制块，属于 PNG 规范中的辅助块，包含了当前帧的序列号、图像的宽高及水平垂直偏移量，帧播放时长和绘制方式（dispose_op 和 blend_op）等，每一帧只有一个 fcTL 块</p>
+</li>
+<li><p>fdAT：帧数据块，包含了帧的序列号和图像数据，仅比 IDAT 多了帧的序列号，每一帧可以有一个或多个 fcTL 块。fdAT 的序列号与 fcTL 共享，用于检测 APNG 的序列错误，可选择性的纠正<br>IDAT 块是 APNG 向下兼容展示时的默认图片。如果 IDAT 之前有 fcTL， 那么 IDAT 的数据则当做第一帧图片（如上图结构），如果 IDAT 之前没有 fcTL，则第一帧图片是第一个 fdAT</p>
+</li>
+</ul>
+<h3 id="GIF"><a href="#GIF" class="headerlink" title="GIF"></a>GIF</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">文件头：47 49 46 38 39 61<br>文件尾：3b<br></code></pre></td></tr></table></figure>
+<ul>
+<li>文件头（File Header）</li>
+<li>GIF 文件署名（Signature）：即‘GIF’三个符号，确认GIF格式</li>
+<li>版本号（Version）：三个字节组成，87a或89a</li>
+<li>GIF 数据流（GIF Data Stream）</li>
+<li>控制标识符</li>
+<li>图象块（Image Block）</li>
+<li>其他的一些扩展块</li>
+<li>文件终结器（Trailer）：固定值 0x3b</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">GIF常考分离帧，在每一帧图片中隐藏信息<br></code></pre></td></tr></table></figure>
+
+<h3 id="BMP"><a href="#BMP" class="headerlink" title="BMP"></a>BMP</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">文件头：42 4D C0 01<br></code></pre></td></tr></table></figure>
+<p>Bitmap（位图）或是DIB（设备无关位图），Windows系统中广泛使用的图像文件格式</p>
+<ul>
+<li>文件头(bmp file header)：文件格式、大小等信息</li>
+<li>位图信息头(bitmap information)：提供图像数据的尺寸、位平面数、压缩方式、颜色索引等信息</li>
+<li>调色板(color palette)：可选，如使用索引来表示图像，调色板就是索引与其对应的颜色的映射表</li>
+<li>位图数据(bitmap data)：图像数据</li>
+</ul>
+<h3 id="ELF"><a href="#ELF" class="headerlink" title="ELF"></a>ELF</h3><p>Linux中，ELF文件全称为：Executable and Linkable Format，主要有三种形式，分别是：</p>
+<ul>
+<li>可执行文件</li>
+<li>动态库文件（共享文件 .so）</li>
+<li>目标文件（可重定位文件 .o）</li>
+</ul>
+<h3 id="DOCX"><a href="#DOCX" class="headerlink" title="DOCX"></a>DOCX</h3><p>DOCX 文 件 头 为 “50 4B 03 04”，与 ZIP 文件头类似，  这是由于 DOCX 文档的结构是按照压缩原理设计的<br>DOCX 文档的目录结构展开来看和压缩文件一样具有文件系统的文件组织 形式，并以树状结构排列，包含目录和子目录，其 中叶子节点是一些文件流<br>一般 DOCX 文档包含 [Content_Types].xml 文件、rels 文件夹、docProps类文件和文档内容类文件（一般在 word、custom 等文件夹下）<br>1.1[Content_Types].xml 文件对整个文档中内容所对应的媒体类型进行说明<br>应用程序读取 DOCX 文件时，先解析 [Content_ Types].xml，就可以在 [Content_Types].xml 中得到文 档所用到的格式、内容、图片等所对应的媒体类型 以及保存的位置，为下一步调用指出入口<br>对于大部分 DOCX 文档来说，[Content_ Types].xml 的内容都是类似的，也就是说文档格式  的媒体类型一样，生成的文件夹和子文件夹以及文件名称相同，只是在项目数量上有区别<br>1.2rels 是 relationships 的缩写，  用来定义文档格式 与媒体类型之间的对应关系<br>根据 rels 可以快速得到各部件和媒体类型格式包的 对应关系，不需要考虑具体的格式，可以节省读取时间<br>根 _rels 文件夹和 word、custom 等文件夹下都存 储有 rels 类文件，根文件夹下的 rels 文件解释文档中主部件和顶级包的关系<br>word 文件夹下的 rels 文件 document.xml.rels 列 出 document.xml 所需的其他部件，如果文档中有用户自定义的一些属性，则会在 custom 文件夹下分别 创建以 item 命名的 rels 文件，进一步解释当前文件 夹下子部件和包的对应关系<br>1.3docProps 文件夹中包括core.xml、app.xml、custom.xml 等<br>1.4文档解析内容<br>word、custom 等文件夹保存了用户对文档的各种操作。custom 中 以 item 为首命名的 xml 文件解释文档中的自定义数据部件，这个部件对 文档的整 体内容影响不大，即使缺失也可以正常读取文档内容。word 文件夹中包含了大量 xml 文件，用来解 释文档的页眉、页脚、批注、脚注、尾注、web 设 置、自定义设置、格式、内容等<br>2.1基于关联对象的信息隐藏<br>[Content_Types].xml 作 为 DOCX 文 档 的 入 口，文档中每添加一类对象， 就需要在 [Content_Types]. xml 进行声明</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AC%94%E8%AE%B0/CTF/" class="category-chain-item">CTF</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AC%94%E8%AE%B0/CTF/MISC/" class="category-chain-item">MISC</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AC%94%E8%AE%B0/CTF/MISC/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E9%9A%90%E5%86%99/" class="category-chain-item">基础知识_隐写</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/" class="print-no-link">#基础知识笔记</a>
+      
+        <a href="/tags/MISC/" class="print-no-link">#MISC</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>隐写基础_文件结构</div>
+      <div>https://monroechen.github.io/2025/12/01/隐写基础_文件结构/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Monroe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年12月1日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/12/01/code/" title="编码">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">编码</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/12/01/%E9%9A%90%E5%86%99/" title="隐写">
+                        <span class="hidden-mobile">隐写</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      
+<div class="hitokoto" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;"> <i class="fas fa-quote-left"></i> <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">Getting poem...</span></a> <script src="/js/Hitokoto.js" defer></script> </div> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,695 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#b0c4de">
+  <meta name="author" content="Monroe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Morse编码一种早期的数字化通信形式 敲击码敲击码是基于 5 ×5 方格波利比奥斯方阵来实现的，通过使用一系列的点击声音来编码而命名，c与k整合在一起（相似对比）棋盘密码：将26个字母放在5×5的方格里，i,j放在一个格子里 曼彻斯特编码通过电平的高低转换来表示“0”或“1”，每一位的中间有一个跳变的动作 格雷码GrayCode格雷码是一个数列集合，每个数使用二进制位来表示用n位元来表示每个数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编码">
+<meta property="og:url" content="https://monroechen.github.io/2025/12/01/code/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Morse编码一种早期的数字化通信形式 敲击码敲击码是基于 5 ×5 方格波利比奥斯方阵来实现的，通过使用一系列的点击声音来编码而命名，c与k整合在一起（相似对比）棋盘密码：将26个字母放在5×5的方格里，i,j放在一个格子里 曼彻斯特编码通过电平的高低转换来表示“0”或“1”，每一位的中间有一个跳变的动作 格雷码GrayCode格雷码是一个数列集合，每个数使用二进制位来表示用n位元来表示每个数">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://monroechen.github.io/2025/12/01/code/image1.png">
+<meta property="og:image" content="https://monroechen.github.io/2025/12/01/code/image2.png">
+<meta property="og:image" content="https://monroechen.github.io/2025/12/01/code/image3.png">
+<meta property="og:image" content="https://monroechen.github.io/2025/12/01/code/image4.png">
+<meta property="og:image" content="https://monroechen.github.io/2025/12/01/code/image5.png">
+<meta property="og:image" content="https://monroechen.github.io/2025/12/01/code/image6.png">
+<meta property="article:published_time" content="2025-11-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-29T15:31:09.527Z">
+<meta property="article:author" content="Monroe">
+<meta property="article:tag" content="基础知识笔记">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://monroechen.github.io/2025/12/01/code/image1.png">
+  
+  
+  
+  <title>编码 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"monroechen.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Monroe</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/banner1.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="编码"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-12-01 00:00" pubdate>
+          2025年12月1日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          9 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">编码</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Morse编码"><a href="#Morse编码" class="headerlink" title="Morse编码"></a>Morse编码</h2><p>一种早期的数字化通信形式<br><img src="image1.png" srcset="/img/loading.gif" lazyload width="600"></p>
+<h2 id="敲击码"><a href="#敲击码" class="headerlink" title="敲击码"></a>敲击码</h2><p>敲击码是基于 5 ×5 方格波利比奥斯方阵来实现的，通过使用一系列的点击声音来编码而命名，c与k整合在一起<br>（相似对比）棋盘密码：将26个字母放在5×5的方格里，i,j放在一个格子里<br><img src="image2.png" srcset="/img/loading.gif" lazyload width="600"></p>
+<h2 id="曼彻斯特编码"><a href="#曼彻斯特编码" class="headerlink" title="曼彻斯特编码"></a>曼彻斯特编码</h2><p>通过电平的高低转换来表示“0”或“1”，每一位的中间有一个跳变的动作<br><img src="image3.png" srcset="/img/loading.gif" lazyload width="600"></p>
+<h2 id="格雷码GrayCode"><a href="#格雷码GrayCode" class="headerlink" title="格雷码GrayCode"></a>格雷码GrayCode</h2><p>格雷码是一个数列集合，每个数使用二进制位来表示<br>用n位元来表示每个数</p>
+<ul>
+<li>位元即每组数列基础数的个数，n位元就是n个二进制数<br>任意两个相邻的代码只有一位二进制数不同，最大数与最小数之间也仅一位数不同，即“首尾相连”</li>
+<li>eg：3位元格雷码 000 001 011 010 110 111</li>
+<li>eg：4位元格雷码 0000 0001 0011 0010 0110 0111 0101 0100</li>
+</ul>
+<h2 id="ascii编码"><a href="#ascii编码" class="headerlink" title="ascii编码"></a>ascii编码</h2><img src="image4.png" srcset="/img/loading.gif" lazyload width="600">
+
+<h2 id="base家族"><a href="#base家族" class="headerlink" title="base家族"></a>base家族</h2><p>二进制编码规则<br>原始数据三字节为一组，每组24个二进制位<br>24个二进制位每6位一组，分为四组<br>每组前补00，构成每组8位<br>将四组8位的二进制转换成四组十进制<br>再根据base规则编码转换对应字符<br>其实base16就是hex</p>
+<ul>
+<li>Base16：0-9、A-F构成，不会出现”&#x3D;”</li>
+<li>Base32：由A-Z、2-7构成，“&#x3D;”作后缀填充</li>
+<li>Base58：不使用数字”0”，大写”O”，”I”(小写是i)，和”l”(大写是L)，以及”+“和”&#x2F;“。<br>（是用于比特币中使用的一种独特的编码方式，主要用于产生比特币的钱包地址）   </li>
+<li>Base62：由A-Z、a-z、0-9构成。<br>(相比于base64,只是去掉了两个符号（+和&#x2F;）)    </li>
+<li>Base64：由A-Z、a-z、0-9、+、&#x2F; 构成，“&#x3D;”作后缀填充<br>非二进制→二进制→每6bit计算十进制→base64对照表，</li>
+<li>Base91：由91个字符（0-9，a-z，A-Z,!#$%&amp;()*+,.&#x2F;:;&lt;&#x3D;&gt;?@[]^_&#96;{|}~”）组成</li>
+</ul>
+<h2 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h2><p>移位密码，通过key在字母表中的顺序移位实现</p>
+<h2 id="Rot13"><a href="#Rot13" class="headerlink" title="Rot13"></a>Rot13</h2><p>凯撒密码的13位，即密钥key为13</p>
+<h2 id="url密码-（-编码）"><a href="#url密码-（-编码）" class="headerlink" title="url密码 （%编码）"></a>url密码 （%编码）</h2><p>原理：先转换成ascii，再将ascii转换为16进制，最后在每一位前加上‘%’<br>tips：在网址导航栏中有url</p>
+<h2 id="培根bacon密码"><a href="#培根bacon密码" class="headerlink" title="培根bacon密码"></a>培根bacon密码</h2><p>利用’A’,’B’加密</p>
+<h2 id="栅栏fence密码"><a href="#栅栏fence密码" class="headerlink" title="栅栏fence密码"></a>栅栏fence密码</h2><p>把明文分成N个组，然后取出每组的第一个，每组的第二个……接着按顺序排列得出密文</p>
+<h2 id="jother编码（JSFuck）"><a href="#jother编码（JSFuck）" class="headerlink" title="jother编码（JSFuck）"></a>jother编码（JSFuck）</h2><p>在javascript语言中，利用少量特定字符构造精简的匿名函数对与字符串的编码方式.代码中大量出现“+”、“！”、“（”、“）”、“[”、“]”、“{”、“}”字符<br>例如:!![]+!![]+!![]+!![]+!![]+!![]</p>
+<h2 id="unicode编码"><a href="#unicode编码" class="headerlink" title="unicode编码"></a>unicode编码</h2><p>每位前为’\u’，</p>
+<h2 id="埃特巴什码-Atbash-Cipher"><a href="#埃特巴什码-Atbash-Cipher" class="headerlink" title="埃特巴什码(Atbash Cipher)"></a>埃特巴什码(Atbash Cipher)</h2><p>（Dr.熊斐特）<br>最后一个字母代表第一个字母，倒数第二个字母代表第二个字母</p>
+<h2 id="Html编码"><a href="#Html编码" class="headerlink" title="Html编码"></a>Html编码</h2><p><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/charsets/ref_html_entities_v.asp">http://www.w3school.com.cn/charsets/ref_html_entities_v.asp</a><br>UTF-8<br>每位以‘&amp;#’开始，以‘；’结束</p>
+<h2 id="UUencode"><a href="#UUencode" class="headerlink" title="UUencode"></a>UUencode</h2><p>二进制到文字的编码，最早在unix 邮件系统中使用，全称：Unix-to-Unix </p>
+<h2 id="encoding"><a href="#encoding" class="headerlink" title="encoding"></a>encoding</h2><p>每三个字节为单位进行编码，如果最后剩下的资料少于三个字节，不够的部份用零补齐。三个字节共有24个Bit，以6-bit为单位分为4个组，每个组以十进制来表示所出现的字节的数值。这个数值只会落在0到63之间。然后将每个数加上32<br>产生的结果刚好落在ASCII字符集（32-空白…95-底线）的范围之中</p>
+<h2 id="XXencode"><a href="#XXencode" class="headerlink" title="XXencode"></a>XXencode</h2><p>将输入文本以每三个字节为单位进行编码。如剩下的少于三个字节，不够的用零补齐。这三个字节共有24个Bit，以6bit为单位分为4个组，每个组以十进制来表示所出现的数值只会落在0到63之间。以所对应值的位置字符代替。+-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz，共64个字符。<br>跟base64字符相比，UUencode多一个“-” 字符，少一个”&#x2F;” 字符</p>
+<h2 id="一些奇奇怪怪的密码"><a href="#一些奇奇怪怪的密码" class="headerlink" title="一些奇奇怪怪的密码"></a>一些奇奇怪怪的密码</h2><p>1.Ook密码<br>2.社会主义核心价值观密码<br>3.当铺密码：<br>当前汉字有多少笔画出头，就是转化成数字几<br>4.盲文<br>5.猪圈密码<br><img src="image5.png" srcset="/img/loading.gif" lazyload width="600"><br>圣骑士团密码（猪圈变种）<br><img src="image6.png" srcset="/img/loading.gif" lazyload width="600"><br>6.文本加密<br><a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/wenbenjiami.php">https://www.qqxiuzi.cn/bianma/wenbenjiami.php</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0/" class="category-chain-item">笔记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AC%94%E8%AE%B0/CTF/" class="category-chain-item">CTF</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/" class="print-no-link">#基础知识笔记</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>编码</div>
+      <div>https://monroechen.github.io/2025/12/01/code/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Monroe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年12月1日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/12/01/BurpSuit_usage/" title="BurpSuit使用">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">BurpSuit使用</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/12/01/%E9%9A%90%E5%86%99%E5%9F%BA%E7%A1%80_%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" title="隐写基础_文件结构">
+                        <span class="hidden-mobile">隐写基础_文件结构</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      
+<div class="hitokoto" style="font-size: 0.85rem; margin: 0.15rem 0.15rem;"> <i class="fas fa-quote-left"></i> <a target="_blank" rel="noopener" href="https://developer.hitokoto.cn/" id="hitokoto_text"><span id="hitokoto">Getting poem...</span></a> <script src="/js/Hitokoto.js" defer></script> </div> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
