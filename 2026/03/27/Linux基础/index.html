@@ -28,7 +28,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://monroechen.github.io/2026/03/27/Linux%E5%9F%BA%E7%A1%80/1.png">
 <meta property="article:published_time" content="2026-03-26T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-03-27T12:01:01.261Z">
+<meta property="article:modified_time" content="2026-03-29T15:09:25.672Z">
 <meta property="article:author" content="Monroe">
 <meta property="article:tag" content="基础知识笔记">
 <meta name="twitter:card" content="summary_large_image">
@@ -362,7 +362,10 @@
   </tbody>
 </table>
 
-<h2 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h2><h3 id="apt命令-apt-命令执行需要超级管理员权限-root-apt提供查找、安装、升级、删除软件包的命令"><a href="#apt命令-apt-命令执行需要超级管理员权限-root-apt提供查找、安装、升级、删除软件包的命令" class="headerlink" title="apt命令&gt;apt 命令执行需要超级管理员权限(root),apt提供查找、安装、升级、删除软件包的命令"></a>apt命令&gt;apt 命令执行需要超级管理员权限(root),apt提供查找、安装、升级、删除软件包的命令</h3><p>更新软件包列表<br>    <code>sudo apt update</code><br>列出可升级的软件包<br>    <code>apt list --upgradable</code><br>升级所有已安装的软件包<br>    <code>sudo apt upgrade</code><br>搜索软件包<br>    <code>apt search &lt;keyword&gt;</code><br>查看软件包信息<br>    <code>apt show &lt;package-name&gt;</code><br>安装软件包<br>    <code>sudo apt install &lt;package-name&gt;</code><br>卸载软件包（保留配置文件）<br>    <code>sudo apt remove &lt;package-name&gt;</code><br>彻底卸载（删除配置文件）<br>    <code>sudo apt purge &lt;package-name&gt;</code><br>清理下载的deb安装包<br>    <code>sudo apt autoremove    # 删除不需要的依赖</code><br>    <code>sudo apt autoclean     # 清理旧版本缓存</code></p>
+<h2 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h2><h3 id="apt命令"><a href="#apt命令" class="headerlink" title="apt命令"></a>apt命令</h3><blockquote>
+<p>apt 命令执行需要超级管理员权限(root),apt提供查找、安装、升级、删除软件包的命令</p>
+</blockquote>
+<p>更新软件包列表<br>    <code>sudo apt update</code><br>列出可升级的软件包<br>    <code>apt list --upgradable</code><br>升级所有已安装的软件包<br>    <code>sudo apt upgrade</code><br>搜索软件包<br>    <code>apt search &lt;keyword&gt;</code><br>查看软件包信息<br>    <code>apt show &lt;package-name&gt;</code><br>安装软件包<br>    <code>sudo apt install &lt;package-name&gt;</code><br>卸载软件包（保留配置文件）<br>    <code>sudo apt remove &lt;package-name&gt;</code><br>彻底卸载（删除配置文件）<br>    <code>sudo apt purge &lt;package-name&gt;</code><br>清理下载的deb安装包<br>    <code>sudo apt autoremove    # 删除不需要的依赖</code><br>    <code>sudo apt autoclean     # 清理旧版本缓存</code></p>
 <h3 id="处理目录的常用命令"><a href="#处理目录的常用命令" class="headerlink" title="处理目录的常用命令"></a>处理目录的常用命令</h3><p>查看当前目录<br>    <code>pwd    # print working directory</code><br>切换目录<br>    <code>cd /path/to/dir        # 切换到指定目录</code><br>    <code>cd ~                   # 切换到用户家目录</code><br>    <code>cd ..                  # 切换到上级目录</code><br>    <code>cd -                   # 切换到上次访问的目录</code><br>列出目录内容<br>    <code>ls                     # 列出当前目录</code><br>    <code>ls -l                  # 详细列表形式</code><br>    <code>ls -a                  # 显示所有文件（包括隐藏文件）</code><br>    <code>ls -lh                 # 人类可读的格式（显示文件大小）</code><br>    <code>ls -lt                 # 按修改时间排序</code><br>创建目录<br>    <code>mkdir dirname          # 创建单个目录</code><br>    <code>mkdir -p dir1/dir2     # 递归创建多级目录</code><br>    <code> mkdir -m 755 dirname   # 创建并设置权限</code><br>删除目录<br>    <code>rmdir emptydir         # 只能删除空目录</code><br>    <code>rm -r dirname          # 递归删除非空目录</code><br>    <code>rm -rf dirname         # 强制删除(谨慎使用！)</code></p>
 <p>复制目录<br>    <code>cp -r source/ target/  # 递归复制整个目录</code></p>
 <p>移动&#x2F;重命名目录<br>    <code>mv oldname newname     # 重命名</code><br>   <code> mv dir1/ /path/dir2/   # 移动目录</code></p>
