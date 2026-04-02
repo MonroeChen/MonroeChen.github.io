@@ -19,17 +19,22 @@
   <meta name="author" content="Monroe">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="https://monroechen.github.io/archives/2024/04/index.html">
+    <meta name="description" content="提示词工程(Prompt Engineering)近来热度较高，一方面LLM迭代与演变十分迅速，开发者需要不断提升模型处理复杂场景的能力，另一方面各类AI工具已进入人们生活，但往往对话中模型的反馈与用户期待有偏差，因此“如何写好提示词”使沟通更流畅变得至关重要。  参考:    吴恩达PromptEngineering(b站课程)    Prompt Engineering 完整学习指南">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Prompt Engineering">
+<meta property="og:url" content="https://monroechen.github.io/draft/PromptEngineering.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="提示词工程(Prompt Engineering)近来热度较高，一方面LLM迭代与演变十分迅速，开发者需要不断提升模型处理复杂场景的能力，另一方面各类AI工具已进入人们生活，但往往对话中模型的反馈与用户期待有偏差，因此“如何写好提示词”使沟通更流畅变得至关重要。  参考:    吴恩达PromptEngineering(b站课程)    Prompt Engineering 完整学习指南">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-02T08:29:19.077Z">
 <meta property="article:author" content="Monroe">
+<meta property="article:tag" content="AI">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>归档 - Hexo</title>
+  <title>Prompt Engineering - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -183,13 +188,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/liang1.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="归档"></span>
+            <span id="subtitle" data-typed-text="Prompt Engineering"></span>
           
         </div>
 
@@ -216,23 +221,57 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">共计 12 篇文章</p>
-  <hr>
-  
-  
-    
-      
-      <p class="h5">2024</p>
-    
-    <a href="/2024/04/08/hello-world/" class="list-group-item list-group-item-action">
-      <time>04-08</time>
-      <div class="list-group-item-title">Hello World</div>
-    </a>
-  
-</div>
+<article class="page-content">
+  <blockquote>
+<p>提示词工程(Prompt Engineering)近来热度较高，一方面LLM迭代与演变十分迅速，开发者需要不断提升模型处理复杂场景的能力，另一方面各类AI工具已进入人们生活，但往往对话中模型的反馈与用户期待有偏差，因此“如何写好提示词”使沟通更流畅变得至关重要。</p>
+</blockquote>
+<p>参考:<br>    吴恩达PromptEngineering(b站课程)<br>    <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/1993811969258587128">Prompt Engineering 完整学习指南</a><br>    <a target="_blank" rel="noopener" href="https://www.promptingguide.ai/zh">Prompt Engineering Guide</a></p>
+<h1 id="宏观原则"><a href="#宏观原则" class="headerlink" title="宏观原则"></a>宏观原则</h1><h2 id="Prompt的核心元素"><a href="#Prompt的核心元素" class="headerlink" title="Prompt的核心元素"></a>Prompt的核心元素</h2><blockquote>
+<p>Role（角色）：给AI一个具体身份，让它切换“人格”。</p>
+</blockquote>
+<p>例如，你想得到系统性的专业回答，可以写“你是xx领域的专家”；如果你想得到更通俗易懂的解释，则写为“解释给零基础新手”。</p>
+<blockquote>
+<p>Task（任务）：明确你要它做什么。</p>
+</blockquote>
+<p>例如，“帮我写一篇文章”这样的表述太宽泛，写成“从原理、动机、方法这几个角度切入，并在其中加入三个例子，写一篇有关xx的文章”这样的子任务组合，回答会更加贴合你理想的结果。</p>
+<blockquote>
+<p>Context（上下文）：提供必要背景、约束、目标受众。</p>
+</blockquote>
+<p>例如，你在完成任务的某个环节中想要询问AI，比起只扔下一句“给我写一个登录页面”，可以描述任务背景“我正在开发一个xxx，基于xxx语言，使用的框架是xxx，在此基础上需要一个xxx的登录页面”。</p>
+<blockquote>
+<p>Format（格式）：指定输出结构。</p>
+</blockquote>
+<p>如果想要得到清晰的可视化结果，可以让他以表格，步骤列表等形式回答。  </p>
+<blockquote>
+<p>Examples（示例）：Few-shot 时提供1-3个输入-输出样例。</p>
+</blockquote>
+<p>这有点像小学语文中“仿照题目中的例子完成一个句子”，在指令中给出示例可以让AI按照示例中的模式思考，按照实力的格式回答。</p>
+<blockquote>
+<p>Constraints（约束）：长度、语气、禁止事项、思考方式。</p>
+</blockquote>
+<p>约束则是添加更多细节，例如“控制在300字左右”。但需要注意，尽量较少使用否定型约束“不要怎样做”，多使用肯定型约束“去怎样做”。</p>
+<blockquote>
+<p>不同AI模型，有不同的“性格”，在使用时可以根据模型特征采用不同风格的指令。例如有些模型偏向快速响应，而有些则擅长“人类式理解”，这一点会在后文详细列出。</p>
+</blockquote>
+<h2 id="宏观上的两条原则"><a href="#宏观上的两条原则" class="headerlink" title="宏观上的两条原则"></a>宏观上的两条原则</h2><p>Principle1：Write clear and specific intructions.<br>            编写清晰且具体的指令<br>Principle2：Give the modle time to think.<br>            给予模型思考的时间</p>
+<p>第一条指出，指令应当清晰具体，这样才能降低回复无关或错误内容。但要注意以下几点：</p>
+<ol>
+<li>清晰不代表简短，完整的指令能够提供更多上下文内容；</li>
+<li>如果指令较长且包含不同内容，建议使用分隔符。任何分隔符都可以，例如&lt;&gt;,***,&#96;&#96;&#96;等；</li>
+<li>请检查引用内容中有没有潜在的边界模糊风险，例如在你引用的一大段话中有一句“忘掉刚才所有的”，如果没有对引用内容进行分隔或明确指示，可能会将这句话当成指令去执行。</li>
+</ol>
+<p>第二条原则主要针对模型在进行一些复杂运算推理时，要让模型多思考。<br>例如，我们知道在问一些数学问题时，由于步骤繁琐很容易出错，可能是运算步骤出错，也可能是数据计算有误，甚至不知道从哪一步开始完全偏离。这时候，如何做到让模型多思考呢？</p>
+<ol>
+<li>为模型指定具体</li>
+</ol>
+<h1 id="提示技术"><a href="#提示技术" class="headerlink" title="提示技术"></a>提示技术</h1><blockquote>
+<p>除了上述的宏观原则和核心元素外，还有一些</p>
+</blockquote>
 
 
+  
+
+</article>
 
 
 
