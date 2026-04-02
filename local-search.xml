@@ -108,6 +108,35 @@
   
   
   <entry>
+    <title>计算机网络基础</title>
+    <link href="/2026/01/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    <url>/2026/01/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</url>
+    
+    <content type="html"><![CDATA[<h2 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h2><p>用于计算机或通信系统间互联的标准体系<br>1.同一层中的各网络节点都有相同的层次结构，具有同样的功能。<br>2.同一节点内相邻层之间通过接口进行通信。<br>3.层结构中的每一层使用下一层提供的服务，并且向其上层提供服务。<br>4.不同节点的同等层按照协议实现对等层之间的通信。<br><img src="OSI.png" width="600"></p><h3 id="TCP-IP-的分层管理"><a href="#TCP-IP-的分层管理" class="headerlink" title="TCP&#x2F;IP 的分层管理"></a>TCP&#x2F;IP 的分层管理</h3><p>互联网相关联的协议集合起来总称为TCP&#x2F;IP<br>应用层：决定了向用户提供应用服务时通信的活动</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">应用层协议：HTTP，FTP，DNS<br></code></pre></td></tr></table></figure><ul><li>DNS ：通过域名查找 IP 地址，或逆向从 IP 地址反查域名<br>传输层：对上层应用层，提供处于网络连接中的两台计算机之间的数据传输<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">传输层协议：TCP UDP<br></code></pre></td></tr></table></figure>网络层：用来处理在网络上流动的数据包<br>链路层（链路层，网络接口层）:用来处理连接网络的硬件部分</li><li>封装：把数据信息包装起来<img src="image1.png" width="600"><img src="image2.png" width="600">URI由某个协议方案表示的资源的定位标识符包括 http、ftp、25mailto、telnet、file 等</li></ul><h3 id="HTTP-协议通过请求和响应的交换达成通信"><a href="#HTTP-协议通过请求和响应的交换达成通信" class="headerlink" title="HTTP 协议通过请求和响应的交换达成通信"></a>HTTP 协议通过请求和响应的交换达成通信</h3><p>用于 HTTP 协议交互的信息 叫HTTP 报文，请求端（客户端）的叫做请求报文，响应端（服务器端）的叫做响应报文。<br>分为报文首部和报文主体两块，两者由最初出现的空行（CR+LF）来划分，不一定要有报文主体。<br><img src="报文1.png" width="600"><br>HTTP 首部字段包含的信息最为丰富。首部字段同时存在于请求和响应报文内，并涵盖 HTTP 报文相关的内容信息。<br><img src="报文2.png" width="600"><br><img src="报文3.png" width="600"><br>请求行：包含用于请求的方法，请求 URI 和 HTTP 版本。<br>状态行：包含表明响应结果的状态码，原因短语和 HTTP 版本。<br>首部字段：包含表示请求和响应的各种条件和属性的各类首部<br><img src="报文4.png" width="600"><br>请求报文：由请求方法、请求 URI、协议版本、可选的请求首部字段和内容实体构成。<br><img src="报文5.png" width="600"></p><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><img src="方法.png" width="600">GET ：获取资源         用来请求访问已被 URI 识别的资源如果请求的资源是文本，那就保持原样返回；如果是像 CGI（Common Gateway Interface，通用网关接口）那样的程序，则返回经过执行后的输出结果POST：传输实体主体PUT：传输文件像 FTP 协议的文件上传一样，要求在请求报文的主体中包含文件内容，然后保存到请求 URI 指定的位置HEAD：获得报文首部      和 GET 一样，但不返回报文主体DELETE：删除文件与 PUT 相反的方法。DELETE 方法按请求 URI 删除指定的资源OPTIONS：询问支持的方法OPTIONS 方法用来查询针对请求 URI 指定的资源支持的方法。TRACE：追踪路径TRACE 方法是让 Web 服务器端将之前的请求通信环回给客户端CONNECT：要求用隧道协议连接代理CONNECT 方法要求在与代理服务器通信时建立隧道，实现用隧道协议进行 TCP 通信。主要使用 SSL（Secure Sockets Layer，安全套接层）和 TLS（Transport Layer Security，传输层安全）协议把通信内容加 密后经网络隧道传输]]></content>
+    
+    
+    <categories>
+      
+      <category>笔记</category>
+      
+      <category>计网</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>基础知识笔记</tag>
+      
+      <tag>计算机网络</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>web</title>
     <link href="/2026/01/21/web/"/>
     <url>/2026/01/21/web/</url>
@@ -150,35 +179,6 @@
       
     </categories>
     
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>计算机网络基础</title>
-    <link href="/2026/01/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
-    <url>/2026/01/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</url>
-    
-    <content type="html"><![CDATA[<h2 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h2><p>用于计算机或通信系统间互联的标准体系<br>1.同一层中的各网络节点都有相同的层次结构，具有同样的功能。<br>2.同一节点内相邻层之间通过接口进行通信。<br>3.层结构中的每一层使用下一层提供的服务，并且向其上层提供服务。<br>4.不同节点的同等层按照协议实现对等层之间的通信。<br><img src="OSI.png" width="600"></p><h3 id="TCP-IP-的分层管理"><a href="#TCP-IP-的分层管理" class="headerlink" title="TCP&#x2F;IP 的分层管理"></a>TCP&#x2F;IP 的分层管理</h3><p>互联网相关联的协议集合起来总称为TCP&#x2F;IP<br>应用层：决定了向用户提供应用服务时通信的活动</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">应用层协议：HTTP，FTP，DNS<br></code></pre></td></tr></table></figure><ul><li>DNS ：通过域名查找 IP 地址，或逆向从 IP 地址反查域名<br>传输层：对上层应用层，提供处于网络连接中的两台计算机之间的数据传输<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">传输层协议：TCP UDP<br></code></pre></td></tr></table></figure>网络层：用来处理在网络上流动的数据包<br>链路层（链路层，网络接口层）:用来处理连接网络的硬件部分</li><li>封装：把数据信息包装起来<img src="image1.png" width="600"><img src="image2.png" width="600">URI由某个协议方案表示的资源的定位标识符包括 http、ftp、25mailto、telnet、file 等</li></ul><h3 id="HTTP-协议通过请求和响应的交换达成通信"><a href="#HTTP-协议通过请求和响应的交换达成通信" class="headerlink" title="HTTP 协议通过请求和响应的交换达成通信"></a>HTTP 协议通过请求和响应的交换达成通信</h3><p>用于 HTTP 协议交互的信息 叫HTTP 报文，请求端（客户端）的叫做请求报文，响应端（服务器端）的叫做响应报文。<br>分为报文首部和报文主体两块，两者由最初出现的空行（CR+LF）来划分，不一定要有报文主体。<br><img src="报文1.png" width="600"><br>HTTP 首部字段包含的信息最为丰富。首部字段同时存在于请求和响应报文内，并涵盖 HTTP 报文相关的内容信息。<br><img src="报文2.png" width="600"><br><img src="报文3.png" width="600"><br>请求行：包含用于请求的方法，请求 URI 和 HTTP 版本。<br>状态行：包含表明响应结果的状态码，原因短语和 HTTP 版本。<br>首部字段：包含表示请求和响应的各种条件和属性的各类首部<br><img src="报文4.png" width="600"><br>请求报文：由请求方法、请求 URI、协议版本、可选的请求首部字段和内容实体构成。<br><img src="报文5.png" width="600"></p><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><img src="方法.png" width="600">GET ：获取资源         用来请求访问已被 URI 识别的资源如果请求的资源是文本，那就保持原样返回；如果是像 CGI（Common Gateway Interface，通用网关接口）那样的程序，则返回经过执行后的输出结果POST：传输实体主体PUT：传输文件像 FTP 协议的文件上传一样，要求在请求报文的主体中包含文件内容，然后保存到请求 URI 指定的位置HEAD：获得报文首部      和 GET 一样，但不返回报文主体DELETE：删除文件与 PUT 相反的方法。DELETE 方法按请求 URI 删除指定的资源OPTIONS：询问支持的方法OPTIONS 方法用来查询针对请求 URI 指定的资源支持的方法。TRACE：追踪路径TRACE 方法是让 Web 服务器端将之前的请求通信环回给客户端CONNECT：要求用隧道协议连接代理CONNECT 方法要求在与代理服务器通信时建立隧道，实现用隧道协议进行 TCP 通信。主要使用 SSL（Secure Sockets Layer，安全套接层）和 TLS（Transport Layer Security，传输层安全）协议把通信内容加 密后经网络隧道传输]]></content>
-    
-    
-    <categories>
-      
-      <category>笔记</category>
-      
-      <category>计网</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>基础知识笔记</tag>
-      
-      <tag>计算机网络</tag>
-      
-    </tags>
     
   </entry>
   
@@ -386,7 +386,7 @@
     <link href="/2025/04/02/%E5%87%8C%E6%99%A8%E5%9B%9E%E4%B9%A1%E7%9A%84%E7%81%AB%E8%BD%A6%E4%B8%8A/"/>
     <url>/2025/04/02/%E5%87%8C%E6%99%A8%E5%9B%9E%E4%B9%A1%E7%9A%84%E7%81%AB%E8%BD%A6%E4%B8%8A/</url>
     
-    <content type="html"><![CDATA[<img src="1.jpg" width="650">第一次在火车上睡的这么安稳，八点，卧铺还没有熄灯，我已经熟睡。  不料十点到达武昌站时，对铺来了一个小男孩，很活泼也很吵闹。我实在睡不下去了，摘了眼罩，没想到他竟然向我搭话“姐姐 你要去哪里呀”，“姐姐 你要吃一点小馒头吗”…… 我气他的吵闹，又觉得有些活泼得可爱。下铺的两人似乎也是被吵得坐起来了，他便开始询问每一个人要不要吃小馒头。虽然没人接下他干巴馒头的盛情邀请，但是我们都开始拿出自己的零食互相分享。夜晚，十一点了，我们四个人小声的聊着。小男孩和妈妈准备去西藏旅游。这趟列车的终点是西宁，下铺和他们一样，要一直坐到终点站然后再转车去西藏，另一位宜春的小哥在西宁下车，我则是明天一早回西安，于是我们又开始聊西北。<img src="2.jpg" width="650">车窗外是铁轨，再远是水面，再远是许多亮着灯的高楼，“这是长江吧”“应该是的”，我一边自问自答着一边打开地图，果然是长江。“其实中铺的风景也蛮好嘞，可以看到窗外，上铺可是看不到的。”小男孩这样说到，也让我因为买到中铺和被吵醒的不高兴散去。十二点，夜晚的宁静正式到来，大家相继睡去，我挤在狭小的火车中铺写下这些来记录这段旅程。一直以来对火车旅行都抱有浪漫幻想。18岁第一次坐火车去洛阳时，车上几乎没什么人，午后阳光照进车厢来安静而温和，19岁第一次体验长途火车卧铺的新奇，20岁和三个朋友一起第一次坐一夜的硬座去玩……以及以前从未想到的，一路上的所见所闻所思所感，竟真的一次又一次让我捱过了长途火车的辛苦。于是，我仍不会放弃幻想。 ]]></content>
+    <content type="html"><![CDATA[<img src="1.jpg" width="600">  <p>第一次在火车上睡的这么安稳，八点，卧铺还没有熄灯，我已经熟睡。  </p><p>不料十点到达武昌站时，对铺来了一个小男孩，很活泼也很吵闹。我实在睡不下去了，摘了眼罩，没想到他竟然向我搭话“姐姐 你要去哪里呀”，“姐姐 你要吃一点小馒头吗”…… 我气他的吵闹，又觉得有些活泼得可爱。  </p><p>下铺的两人似乎也是被吵得坐起来了，他便开始询问每一个人要不要吃小馒头。虽然没人接下他干巴馒头的盛情邀请，但是我们都开始拿出自己的零食互相分享。  </p><img src="2.jpg" width="600">  <p>夜晚，十一点，本无交集的四个人受到小男孩的影响小声地聊了起来。这趟列车从南方开往西北，除我之外其余几人都在终点西宁下车，有人去青海旅行，有人要转车进藏。  </p><p>黑暗中看不清彼此的脸，却聊的兴致盎然，从西藏聊到青海，从西宁聊到西安，接着聊各自的家乡，</p><p>车窗外是铁轨，然后是水面，再远是一片灯火葳蕤。“这是长江吧”“应该是的”，我一边自问自答着一边打开地图，果然是长江。<br>“其实中铺的风景也蛮好嘞，可以看到窗外，上铺可是看不到的。”小男孩的话也让我因为买到中铺和被吵醒的不高兴散去。</p><p>十二点，夜晚的宁静正式到来，大家相继睡去，我挤在狭小的火车中铺写下这些字来记录。  </p><img src="4.jpg" width="600"><p>一直以来对火车旅行都抱有浪漫幻想。18岁第一次坐火车去洛阳时，午后阳光透过车窗照进几乎没人的车厢，温和又宁静的氛围让我以为火车旅行真的像电影里一样文艺。19岁第一次体验长途火车卧铺，长时间的车程没觉得难熬，满是对卧铺火车的新奇和对旅途的期待。20岁被三个朋友拉着坐十几个小时的硬座同行，累是真的，快乐也是真的，一路上聊天互相嘲笑“不知道是怕饿死在火车上，还是准备在火车上野餐”，几个人背了满满一兜“干粮”。</p><img src="3.jpg" width="600">上大学期间坐了很多次火车，哪怕车厢的闷热、人潮的拥挤已经治好了18岁那年坐在火车靠窗位置带着耳机看书的“文艺病”，我也仍对每一次火车旅程津津乐道。  <p>每每一路上的所见所闻所思所感，竟真的让我捱过了一次又一次长途火车的辛苦。</p><p>于是，我仍不会放弃幻想。 </p>]]></content>
     
     
     <categories>
