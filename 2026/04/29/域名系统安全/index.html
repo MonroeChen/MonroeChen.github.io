@@ -19,24 +19,25 @@
   <meta name="author" content="Monroe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="WiresharkWireshark过滤语法 IP过滤：ip.addr eq 192.168.1.107来源：ip.src eq 192.168.1.107目标： ip.dst eq 192.168.1.107  端口过滤tcp.port eq 80tcp.port &#x3D;&#x3D; 80目标端口80：tcp.dstport &#x3D;&#x3D; 80来源端口80：tcp.srcpor">
+    <meta name="description" content="前置基础知识名词解释（域名|URL|DNS）学习域名系统安全前，首先要清楚以下这三个”What”：What is Domain name?什么是域名？What is URL?什么是URL统一资源定位符？What is DNS?什么是DNS域名系统？这三个词将会时刻萦绕在域名安全这一节。   1.域名：我们在互联网上访问的实质是IP地址，但IP是一串数字，对机器友好对人类来说难以记忆，所以需要为它起">
 <meta property="og:type" content="article">
-<meta property="og:title" content="流量分析">
-<meta property="og:url" content="https://monroechen.github.io/2026/01/14/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/index.html">
+<meta property="og:title" content="域名系统安全">
+<meta property="og:url" content="https://monroechen.github.io/2026/04/29/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F%E5%AE%89%E5%85%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="WiresharkWireshark过滤语法 IP过滤：ip.addr eq 192.168.1.107来源：ip.src eq 192.168.1.107目标： ip.dst eq 192.168.1.107  端口过滤tcp.port eq 80tcp.port &#x3D;&#x3D; 80目标端口80：tcp.dstport &#x3D;&#x3D; 80来源端口80：tcp.srcpor">
+<meta property="og:description" content="前置基础知识名词解释（域名|URL|DNS）学习域名系统安全前，首先要清楚以下这三个”What”：What is Domain name?什么是域名？What is URL?什么是URL统一资源定位符？What is DNS?什么是DNS域名系统？这三个词将会时刻萦绕在域名安全这一节。   1.域名：我们在互联网上访问的实质是IP地址，但IP是一串数字，对机器友好对人类来说难以记忆，所以需要为它起">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://monroechen.github.io/2026/01/14/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/image1.png">
-<meta property="article:published_time" content="2026-01-13T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-06-30T02:42:34.708Z">
+<meta property="og:image" content="https://monroechen.github.io/1.png">
+<meta property="article:published_time" content="2026-04-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-30T07:46:06.338Z">
 <meta property="article:author" content="Monroe">
-<meta property="article:tag" content="基础知识笔记">
+<meta property="article:tag" content="网安">
+<meta property="article:tag" content="域名安全">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://monroechen.github.io/2026/01/14/%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/image1.png">
+<meta name="twitter:image" content="https://monroechen.github.io/1.png">
   
   
   
-  <title>流量分析 - Hexo</title>
+  <title>域名系统安全 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="流量分析"></span>
+            <span id="subtitle" data-typed-text="域名系统安全"></span>
           
         </div>
 
@@ -213,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-01-14 00:00" pubdate>
-          2026年1月14日 凌晨
+        <time datetime="2026-04-29 00:00" pubdate>
+          2026年4月29日 凌晨
         </time>
       </span>
     
@@ -225,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          1.6k 字
         
       </span>
     
@@ -236,7 +237,7 @@
         
         
         
-          11 分钟
+          14 分钟
         
       </span>
     
@@ -273,127 +274,77 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">流量分析</h1>
+            <h1 id="seo-header">域名系统安全</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Wireshark"><a href="#Wireshark" class="headerlink" title="Wireshark"></a>Wireshark</h1><h2 id="Wireshark过滤语法"><a href="#Wireshark过滤语法" class="headerlink" title="Wireshark过滤语法"></a>Wireshark过滤语法</h2><ul>
-<li><p>IP过滤：<br>ip.addr eq 192.168.1.107<br>来源：ip.src eq 192.168.1.107<br>目标： ip.dst eq 192.168.1.107</p>
-</li>
-<li><p>端口过滤<br>tcp.port eq 80<br>tcp.port &#x3D;&#x3D; 80<br>目标端口80：tcp.dstport &#x3D;&#x3D; 80<br>来源端口80：tcp.srcport &#x3D;&#x3D; 80<br>过滤端口范围：tcp.port &gt;&#x3D; 1 and tcp.port &lt;&#x3D; 80</p>
-</li>
-<li><p>协议过滤<br>tcp、udp、arp、icmp、http、smtp、ftp、dns、msnms、ip、oicq、bootp等</p>
-</li>
-<li><p>MAC过滤<br>eth.addr eq A0:00:00:04:C5:84<br>目标mac：eth.dst &#x3D;&#x3D; A0:00:00:04:C5:84<br>来源mac：eth.src eq A0:00:00:04:C5:84 </p>
-</li>
-<li><p>长度过滤<br>udp.length &#x3D;&#x3D; 26（udp固定长度8+udp下面那块数据包之和）<br>tcp.len &gt;&#x3D; 7 （ip数据包即tcp下面那块数据,不包括tcp本身）<br>ip.len &#x3D;&#x3D; 94 （除以太网头固定长度14,其它都算是ip.len,即从ip本身到最后）<br>frame.len &#x3D;&#x3D; 119 （整个数据包长度,从eth开始到最后）</p>
-</li>
-<li><p>http模式过滤</p>
-<img src="image1.png" srcset="/img/loading.gif" lazyload width="600">  
-</li>
-<li><p>TCP参数过滤:<br>1.TCP（传输控制协议）</p>
-</li>
-<li><p>作用：提供可靠的、面向连接的通信，确保数据包按顺序传输且不丢失。</p>
-</li>
-<li><p>应用：HTTP、FTP、SMTP等基于TCP的应用协议。</p>
-</li>
-<li><p>过滤应用：可以过滤特定端口的TCP流量，如80端口（HTTP）、443端口（HTTPS）。<br>2.UDP（用户数据报协议）</p>
-</li>
-<li><p>作用：提供无连接的、不可靠的数据传输，适用于需要快速传输的小数据包的应用。</p>
-</li>
-<li><p>应用：DNS查询、视频流、在线游戏等。</p>
-</li>
-<li><p>过滤应用：可以根据应用过滤场景特定端口的UDP流量，如53端口（DNS）。</p>
-</li>
+                <h1 id="前置基础知识"><a href="#前置基础知识" class="headerlink" title="前置基础知识"></a>前置基础知识</h1><h2 id="名词解释（域名-URL-DNS）"><a href="#名词解释（域名-URL-DNS）" class="headerlink" title="名词解释（域名|URL|DNS）"></a>名词解释（域名|URL|DNS）</h2><p>学习域名系统安全前，首先要清楚以下这三个”What”：<br>What is Domain name?什么是域名？<br>What is URL?什么是URL统一资源定位符？<br>What is DNS?什么是DNS域名系统？<br>这三个词将会时刻萦绕在域名安全这一节。  </p>
+<p>1.域名：我们在互联网上访问的实质是IP地址，但IP是一串数字，对机器友好对人类来说难以记忆，所以需要为它起一个方便记忆的名字。所以出现了“域名”。直观来讲，例如想要访问百度，只需要搜索他的域名”baidu.com”，而不需要去记住他的IP。<br>域名的层级结构：从右向左为顶级域、二级域和子域名</p>
+<p>2.URL：“统一资源定位符”，它提供了访问资源时完整的操作指令，标准的组成格式如下  </p>
+<blockquote>
+<p>Scheme:&#x2F;&#x2F;Host  :Port  &#x2F;Path  ?Qurey    #Fragment<br> 协议: &#x2F;&#x2F;主机名 :端口  &#x2F;路径  ?查询参数  #片段标识符  </p>
+</blockquote>
+<p>其中主机名有两种形式（一种为IP+端口，另一种是常见的域名作为主机名）<br>直观来讲，就是浏览器上方搜索栏的那一行字符串<br><img src="/1.png" srcset="/img/loading.gif" lazyload alt="img">  </p>
+<p>3.DNS：“域名系统”，作用是完成域名到IP的解析。在第一条的解释中我们得知“域名”是为了方便人类阅读记忆而产生的，实际访问的仍是IP，因此DNS就是用来在机器上将域名通过递归解析为IP的协议。  </p>
+<h2 id="DNS资源记录类型"><a href="#DNS资源记录类型" class="headerlink" title="DNS资源记录类型"></a>DNS资源记录类型</h2><p>DNS资源记录类型是DNS数据库中最基本的信息存储单元。所有域名解析的结果，本质上都是返回一条或多条特定类型的资源记录。</p>
+<p>A记录：将域名映射到IPv4地址，正向解析域名到IP地址<br>AAAA记录：A记录的IPv6版本<br>PTR记录：A&#x2F;AAAA的反向记录，将IP地址映射回域名。反向DNS查询，常用于邮件服务器验证和安全审计<br>CNAME记录：别名记录，将不同域名转到一个域名记录上，实现多个域名指向同一IP<br>NS记录：域名服务器记录，用来指定域名由哪个DNS服务器来解析<br>MX记录：邮件交换记录。专门用于SMTP邮件路由<br>TXT记录：某个主机名或域名的说明<br>ANY	通配查询表示希望服务器返回该名称下的所有类型的记录  </p>
+<h2 id="一个小问题"><a href="#一个小问题" class="headerlink" title="一个小问题"></a>一个小问题</h2><p>在浏览器上访问资源时，域名解析的过程是什么？</p>
+<h1 id="域名系统下的钓鱼侦测"><a href="#域名系统下的钓鱼侦测" class="headerlink" title="域名系统下的钓鱼侦测"></a>域名系统下的钓鱼侦测</h1><h2 id="基于URL特征的攻击"><a href="#基于URL特征的攻击" class="headerlink" title="基于URL特征的攻击"></a>基于URL特征的攻击</h2><p>URL分为主机特征和词汇特征</p>
+<blockquote>
+<p>主机特征包括：WHOIS信息、位置信息、其他DNS相关的属性(TTL,DNS是否共享相同的ISP等)<br>词汇特征包括：主机名、主域名、域名的级数、域名中的点数、是否包含IP、使用的协议以及URL长度等</p>
+</blockquote>
+<p>常见钓鱼手段有  </p>
+<ol>
+<li>拼写欺骗<br>相似字符代替。例如大写字母’I’和小写字母’l’，西里尔字母а和ASCII字母 a，在视觉上难以区分。攻击者通过仿冒知名品牌达成伪装。例如“appIe.com”。<br>错拼。多一个字母或者将字母换位，有时候也很难发现，例如“gooole.com”或是“biadu.com”  </li>
+<li>超长URL<br>子域名欺骗，攻击者通过将知名品牌名作为子域前缀来进行混淆。<br>例如近期我们发现的一起摩根士丹利仿冒案例，“morganstanley.cc.cd”，其中“cc.cd”才是真实域名。  </li>
+<li>URL编码绕过<br>对路径或参数中的字符进行多重编码（如 %2F 代替 &#x2F;，甚至 %252F 双重编码），试图绕过基于关键字的正则匹配  </li>
+<li>HTTPS滥用<br>攻击者通过Let’s Encrypt等免费CA获取有效SSL证书，使浏览器显示绿色锁图标。用户误以为“有锁即安全”，但实际上HTTPS仅代表信道加密，并不代表目标可信。</li>
+</ol>
+<h2 id="防御及侦测手段"><a href="#防御及侦测手段" class="headerlink" title="防御及侦测手段"></a>防御及侦测手段</h2><p>这里主要列举一些工具的使用，用于侦测和分析。<br>在初步分析中我最常用的是Whois和URLScan，关于URLSCan的详细使用会单独写一篇，这里只介绍基础用法。</p>
+<h3 id="URLScan"><a href="#URLScan" class="headerlink" title="URLScan"></a>URLScan</h3><p>主要用于扫描和分析可疑 URL、钓鱼网站、恶意页面等。它会模拟浏览器访问目标 URL，可以查看：  </p>
+<ul>
+<li>Screenshot：页面截图。  </li>
+<li>Network：所有网络请求、域名、IP、资源加载情况。  </li>
+<li>Redirects：重定向链。  </li>
+<li>Malicious Indicators：潜在恶意行为、证书信息等。  </li>
+<li>Similar：结构相似的其他扫描结果。  </li>
+<li>Search：全局搜索历史扫描。</li>
 </ul>
-<ol start="3">
-<li>ARP（地址解析协议）</li>
+<h3 id="WHOIS"><a href="#WHOIS" class="headerlink" title="WHOIS"></a>WHOIS</h3><p>用来查询域名信息的数据库<br>whois domainname  可以查询域名的详细信息<br>whois ipaddress   可以查询IP地址信息  </p>
+<ul>
+<li>whois查询结果：  </li>
+<li>Domain Name: 域名全称。  </li>
+<li>Registrar: 域名注册商。  </li>
+<li>Registration Date: 域名注册日期。  </li>
+<li>Expiration Date: 域名到期日期。  </li>
+<li>Registrant Name: 域名注册者姓名。  </li>
+<li>Registrant Organization: 域名注册者组织。  </li>
+<li>Registrant Email: 域名注册者电子邮件。  </li>
+<li>Name Server: 域名DNS服务器。  </li>
+<li>IP Address: IP地址全称。  </li>
+<li>NetRange: IP地址范围。  </li>
+<li>Organization: IP地址组织。  </li>
+<li>Updated Date: 信息更新日期。</li>
+</ul>
+<h3 id="Virus-Total"><a href="#Virus-Total" class="headerlink" title="Virus Total"></a>Virus Total</h3><p>多引擎病毒检测网站，主要功能是文件扫描和URL分析，可以在网页上直接使用，也可以调用API批量处理文件。</p>
+<ol>
+<li>文件扫描<br>生成文件分析报告，包括文件的基本信息、检测引擎的结果、静态分析和动态分析等。</li>
 </ol>
 <ul>
-<li>作用：将IP地址解析为物理MAC地址，用于同等局域网内的通信。</li>
-<li>过滤应用：可用于检测和阻止ARP欺骗攻击。</li>
+<li>静态分析可以了解文件来源和功能，有文件头、导入表、字符串等信息    </li>
+<li>动态分析检测文件真实行为辅助判定文件的危害，如注册表修改、进程创建、网址访问等信息</li>
 </ul>
-<ol start="4">
-<li>ICMP（互联网控制消息协议）</li>
+<ol start="2">
+<li>URL分析<br>检测可疑网址和域名，URL分析结果包含：</li>
 </ol>
 <ul>
-<li>作用：用于网络设备之间发送错误消息和操作信息，如ping命令。</li>
-<li>过滤应用：可以过滤ping请求和响应，以防止ICMP洪水攻击。</li>
+<li>URL的基本信息,如域名、IP、注册商等  </li>
+<li>URL的检测结果,即有多少安全引擎判定该URL为恶意的  </li>
+<li>该URL关联的可疑文件,即曾经从该URL下载过哪些恶意文件  </li>
+<li>该URL的网页快照和DOM结构,可以直观地看到网页的内容  </li>
+<li>该URL的网络流量和行为分析,即访问该URL时有哪些网络连接和活动</li>
 </ul>
-<ol start="5">
-<li>HTTP（超文本传输​​协议）</li>
-</ol>
-<ul>
-<li>作用：用于在Web浏览器和服务器之间传输超文本，主要用于网页访问。</li>
-<li>过滤应用：可以过滤HTTP流量以控制网页访问或监控网络使用情况。</li>
-</ul>
-<ol start="6">
-<li>SMTP（简单邮件传输协议）</li>
-</ol>
-<ul>
-<li>作用：用于电子邮件的发送和转发。</li>
-<li>过滤应用：可过滤SMTP流量以防止垃圾邮件或监控邮件通信。<br>7.FTP（文件传输协议）</li>
-<li>作用：用于在客户端和服务器之间传输文件。</li>
-<li>过滤应用：可限制或监控FTP流量以确保安全的文件传输。</li>
-</ul>
-<ol start="8">
-<li>DNS（域名系统）</li>
-</ol>
-<ul>
-<li>作用：将域名解析为IP地址。</li>
-<li>过滤应用：可以过滤DNS查询，防止以DNS欺骗攻击或拦截恶意网站。</li>
-</ul>
-<ol start="9">
-<li>MSNMS（微软网络信使服务）</li>
-</ol>
-<ul>
-<li>作用：用于即时消息传递（如旧版的Windows Messenger）。</li>
-<li>过滤应用：可以阻止即时消息应用程序的使用。</li>
-</ul>
-<ol start="10">
-<li>IP（互联网协议）</li>
-</ol>
-<ul>
-<li>作用：提供网络设备之间的基本数据传输功能。</li>
-<li>过滤应用：可以根据源或目标IP地址进行过滤，控制哪些设备可以通信。<br>11.OICQ（开放式ICQ）</li>
-<li>作用：基于ICQ协议的即时通讯软件，类似于早期的QQ。</li>
-<li>过滤应用：可以过滤此类即时通讯流量以控制员工使用情况。</li>
-</ul>
-<ol start="12">
-<li>BOOTP（引导协议）</li>
-</ol>
-<ul>
-<li>作用：用于从服务器获取IP地址等信息，类似于DHCP。</li>
-<li>过滤应用：可用于控制和监控网络中的动态IP地址分配。</li>
-</ul>
-<h1 id="jwt认证"><a href="#jwt认证" class="headerlink" title="jwt认证"></a>jwt认证</h1><p>[jwtTOKEN在线解码] <a target="_blank" rel="noopener" href="https://tooltt.com/jwt-decode/">https://tooltt.com/jwt-decode/</a></p>
-<h2 id="传统session认证："><a href="#传统session认证：" class="headerlink" title="传统session认证："></a>传统session认证：</h2><p>http无状态协议，基于cookie保存信息并在下一次发送的方式，是传统的session认证<br>缺点：用户过多时服务器开销大、限制了应用扩展力、cookie被截获时的安全问题</p>
-<h2 id="基于token的鉴权机制："><a href="#基于token的鉴权机制：" class="headerlink" title="基于token的鉴权机制："></a>基于token的鉴权机制：</h2><p>类似于http无状态，不在服务端保存信息<br>流程：</p>
-<ul>
-<li>用户使用用户名密码来请求服务器</li>
-<li>服务器进行验证用户的信息</li>
-<li>服务器通过验证发送给用户一个token</li>
-<li>客户端存储token，并在每次请求时附送上这个token值</li>
-<li>服务端验证token值，并返回数据<br>token必须要在每次请求时传递给服务端，应保存在请求头里。且服务端要支持CORS策略<br>JWT由三段信息组成：头部（header）、载荷（payload）、签证（signature）。三部分由“.”分隔连接<br>形如：xxxxxxx.yyyyyyyy.zzzzzz<br>header由两部分构成：token类型声明和加密算法名称<br>如： {<br>‘typ’: ‘JWT’,<br>‘alg’: ‘HS256’</li>
-</ul>
-<p>}</p>
-<p>然后将头部进行base64加密，便得到jwt第一部分</p>
-<p>payload包含声明（要求）<br>声明是关于实体(通常是用户)和其他数据的声明。声明有三种类型: registered, public 和 private。  </p>
-<ul>
-<li><p>Registered claims : 这里有一组预定义的声明，它们不是强制的，但是推荐。<br>比如：iss (issuer), exp (expiration time), sub (subject), aud (audience)等。</p>
-</li>
-<li><p>Public claims : 可以随意定义。</p>
-</li>
-<li><p>Private claims : 用于在同意使用它们的各方之间共享信息，并且不是注册的或公开的声明。 下面是一个例子：<br>如：{</p>
-<pre><code class="hljs">  &quot;sub&quot;: &#39;1234567890&#39;,
-        &quot;name&quot;: &#39;john&#39;,
-  &quot;admin&quot;:true
-</code></pre>
-<p>}</p>
-</li>
-</ul>
-<p>对payload进行Base64编码就得到JWT的第二部分</p>
 
                 
               </div>
@@ -417,7 +368,7 @@
   
     <span>></span>
     
-  <a href="/categories/%E7%AC%94%E8%AE%B0/CTF/" class="category-chain-item">CTF</a>
+  <a href="/categories/%E7%AC%94%E8%AE%B0/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" class="category-chain-item">网络安全</a>
   
   
 
@@ -434,7 +385,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%AC%94%E8%AE%B0/" class="print-no-link">#基础知识笔记</a>
+        <a href="/tags/%E7%BD%91%E5%AE%89/" class="print-no-link">#网安</a>
+      
+        <a href="/tags/%E5%9F%9F%E5%90%8D%E5%AE%89%E5%85%A8/" class="print-no-link">#域名安全</a>
       
     </div>
   
@@ -446,8 +399,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>流量分析</div>
-      <div>https://monroechen.github.io/2026/01/14/流量分析/</div>
+      <div>域名系统安全</div>
+      <div>https://monroechen.github.io/2026/04/29/域名系统安全/</div>
     </div>
     <div class="license-meta">
       
@@ -459,7 +412,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年1月14日</div>
+          <div>2026年4月29日</div>
         </div>
       
       
@@ -491,9 +444,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/01/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" title="计算机网络基础">
+                      <a href="/2026/06/08/WEB%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E6%8A%A4/" title="">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">计算机网络基础</span>
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -501,8 +454,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/12/05/TOOLS/" title="MISC_工具集">
-                        <span class="hidden-mobile">MISC_工具集</span>
+                      <a href="/2026/03/27/Linux%E5%9F%BA%E7%A1%80/" title="Linux基础">
+                        <span class="hidden-mobile">Linux基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
