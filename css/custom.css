@@ -1,0 +1,74 @@
+/* Homepage Introduction */
+
+.home-intro {
+  display: flex;
+  justify-content: center;
+}
+
+
+.intro-card {
+
+  width: 90%;
+  max-width: 900px;
+
+  padding: 50px 40px;
+
+  background: rgba(255,255,255,0.8);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.3s ease;
+
+}
+
+
+.intro-card:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.12);
+
+}
+
+
+.intro-title {
+
+  font-size: 2.2rem;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+}
+
+
+.intro-line {
+
+  width: 80px;
+
+  height: 3px;
+
+  margin: 20px auto;
+
+  background: #555;
+
+  border-radius: 10px;
+
+}
+
+
+.intro-subtitle {
+
+  font-size: 1.2rem;
+
+  color: #666;
+
+  letter-spacing: 1px;
+
+}
