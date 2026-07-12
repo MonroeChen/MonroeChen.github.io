@@ -19,15 +19,13 @@
   <meta name="author" content="Monroe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="document.addEventListener(&quot;DOMContentLoaded&quot;, function() {      var chart &#x3D; echarts.init(document.getElementById(&#39;china-map&#39;));      fetch(&#39;https:&#x2F;&#x2F;geo.datav.aliyun.com&#x2F;areas_v3&#x2F;bound&#x2F;100000_fu">
-<meta property="og:type" content="website">
+    <meta property="og:type" content="website">
 <meta property="og:title" content="探索">
 <meta property="og:url" content="https://monroechen.github.io/explore/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="document.addEventListener(&quot;DOMContentLoaded&quot;, function() {      var chart &#x3D; echarts.init(document.getElementById(&#39;china-map&#39;));      fetch(&#39;https:&#x2F;&#x2F;geo.datav.aliyun.com&#x2F;areas_v3&#x2F;bound&#x2F;100000_fu">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2026-07-12T06:17:52.706Z">
+<meta property="article:modified_time" content="2026-07-12T06:38:22.852Z">
 <meta property="article:author" content="Monroe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -251,79 +249,10 @@
 <article class="page-content">
   <div id="china-map" style="width:100%;height:700px;"></div>
 
+
 <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-<script src="https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json"></script>
 
-<script>
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    var chart = echarts.init(document.getElementById('china-map'));
-
-    fetch('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json')
-        .then(response => response.json())
-        .then(chinaJson => {
-
-            echarts.registerMap('china', chinaJson);
-
-            var option = {
-                title: {
-                    text: 'Travel Map',
-                    left: 'center'
-                },
-
-                tooltip: {
-                    trigger: 'item'
-                },
-
-                series: [{
-                    type: 'map',
-                    map: 'china',
-
-                    roam: true,
-
-                    label: {
-                        show: true
-                    },
-
-                    emphasis: {
-                        label: {
-                            show: true
-                        }
-                    }
-                }]
-            };
-
-            chart.setOption(option);
-
-chart.on('click', function(params) {
-
-    fetch('/_data/travel.json')
-        .then(response => response.json())
-        .then(data => {
-
-            const province = data[params.name];
-
-            if(province){
-
-                window.location.href = province.url;
-
-            }else{
-
-                alert(
-                    params.name + " 暂无旅行记录"
-                );
-
-            }
-
-        });
-
-});
-        });
-
-});
-
-</script>
+<script src="/js/travel-map.js"></script>
 
   
 
