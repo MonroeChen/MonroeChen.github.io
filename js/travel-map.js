@@ -1,3 +1,5 @@
+console.log("travel-map.js loaded");
+
 document.addEventListener("DOMContentLoaded", function() {
 
     var chart = echarts.init(
@@ -5,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     );
 
 
-    fetch('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json')
+    fetch('/js/china.json')
 
         .then(response => response.json())
 
